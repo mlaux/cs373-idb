@@ -36,7 +36,7 @@
         </div>
 
         {% block content %}{% endblock %}
-        {% request.url_rule.endpoint %}
+        {{ request.url_rule.endpoint }}
         <footer class="footer">
             <p>&copy; 2016 It's Time To Duel, Inc.</p>
         </footer>
