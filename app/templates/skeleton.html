@@ -24,12 +24,24 @@
         <div class="header clearfix">
             <nav>
                 <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="/">Home</a></li>
-                    <li role="presentation"><a href="/about">About</a></li>
-                    <li role="presentation"><a href="/card_types">Card Types</a></li>
-                    <li role="presentation"><a href="/cards">Cards</a></li>
-                    <li role="presentation"><a href="/subtypes">Subtypes</a></li>
-                    <li role="presentation"><a href="/families">Families</a></li>
+                    <li role="presentation" {% if request.url_rule.endpoint == "home_page" %}class="active"{% endif %}>
+                        <a href="/">Home</a>
+                    </li>
+                    <li role="presentation" {% if request.url_rule.endpoint == "about_page" %}class="active"{% endif %}>
+                        <a href="/about">About</a>
+                    </li>
+                    <li role="presentation" {% if request.url_rule.endpoint == "card_types_page" %}class="active"{% endif %}>
+                        <a href="/card_types">Card Types</a>
+                    </li>
+                    <li role="presentation" {% if request.url_rule.endpoint == "cards_page" %}class="active"{% endif %}>
+                        <a href="/cards">Cards</a>
+                    </li>
+                    <li role="presentation" {% if request.url_rule.endpoint == "subtypes_page" %}class="active"{% endif %}>
+                        <a href="/subtypes">Subtypes</a>
+                    </li>
+                    <li role="presentation" {% if request.url_rule.endpoint == "families_page" %}class="active"{% endif %}>
+                        <a href="/families">Families</a>
+                    </li>
                 </ul>
             </nav>
             <h3 class="text-muted">It's Time To Duel</h3>
