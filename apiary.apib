@@ -1,0 +1,50 @@
+FORMAT: 1A
+HOST: http://itstimetoduel.me/apiv1
+
+# It's Time To Duel
+
+It's Time To Duel is a simple API allowing consumers to look up information about Yu-Gi-Oh cards.
+It was implemented for the CS 373 group website project at UT.
+
+## Cards Collection [/cards]
+
+### List All Cards [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "15",
+                "card_type": "machine",
+                "subtype": "effect",
+                "family": "dark",
+                "name": "Jinzo",
+                "text": "Trap Cards cannot be activated. The effects of all face-up Trap Cards are negated.",
+                "attack": "2400",
+                "defense": "1500",
+                "level": "6"
+            }
+        ]
+
+
+## Card [/cards/{card_id}]
+
+### Get One Card [GET]
+
++ Parameters
+    + card_id (number) - ID of the card in the form of an integer
+
++ Response 200 (application/json)
+
+        {
+            "id": "15",
+            "card_type": "machine",
+            "subtype": "effect",
+            "family": "dark",
+            "name": "Jinzo",
+            "text": "Trap Cards cannot be activated. The effects of all face-up Trap Cards are negated.",
+            "attack": "2400",
+            "defense": "1500",
+            "level": "6"
+        }
+

@@ -1,10 +1,7 @@
 from flask import Flask
 from sqlalchemy import *
-from sqlalchemy import schema
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
 engine = create_engine('sqlite:///:memory:', echo=True)
 metadata = MetaData()
@@ -74,4 +71,3 @@ result2= conn.execute(select([my_cards]))
 
 print(list(result2))
 '''
-
