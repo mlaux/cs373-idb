@@ -1,57 +1,84 @@
+# pylint: disable = unused-wildcard-import
+# pylint: disable = bad-continuation
+# pylint: disable = invalid-name
+
+'''Creates tables for each of the 4 models with its attributes'''
+
 from flask import Flask
 from sqlalchemy import *
-from sqlalchemy import schema
+from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
+from sqlalchemy import create_engine
 
+engine = create_engine('sqlite:///:memory:', echo=True)
+metadata = MetaData()
 
-#db= create_engine('')
+def my_cards_table():
+    '''This function creates and returns table for cards'''
+    my_cards = Table('cards', metadata,
+        Column('card_id', Integer, primary_key=True),
+        Column('subType_id', Integer),
+        Column('cardType_id', Integer),
+        Column('family_id', Integer, nullable=true),
+        Column('name', String(100)),
+        Column('text', String(1000)),
+        Column('cardType', String(100)),
+        Column('subType', String(100)),
+        Column('family', String(100), nullable=true),
+        Column('attack', Integer, nullable=true),
+        Column('defense', Integer, nullable=true),
+        Column('level', Integer, nullable=true),
+        Column('price', Float, nullable=true),
+        Column('url', String(100), nullable=true),)
 
-#db.echo = False  # Try changing this to True and see what happens
+    my_cards.create(engine)
+    return my_cards
 
-metadata = schema.MetaData()
+def my_subtype_table():
+    '''This function creates and returns table for card subType'''
+    my_subtype = Table("subType", metadata,
+        Column('subType_id', Integer, primary_key=True),
+        Column('cardType_id', Integer),
+        Column('subType_name', String(100)),
+        Column('cards_in_subType', Integer),
+        Column('avg_price_subtype', Float, nullable=true),
+        Column('cardType', String(100)),)
 
-my_cards = Table('cards', metadata,
-    Column('card_id', Integer, primary_key=True),
-    Column('subType_id', Integer),
-    Column('cardType_id', Integer),
-    Column('family_id', Integer),
-    Column('name', String(100)),
-    Column('text', String(1000)),
-    Column('cardType', String(100)),
-    Column('subType', String(100)),
-    Column('family', String(100)),
-    Column('attack', String(100)),
-    Column('defense', String(100)),
-    Column('level', Integer),
-    Column('url', String(100)),)
+    my_subtype.create(engine)
+    return my_subtype
 
-my_cards.create()
+def my_family_table():
+    '''This function creates and returns table for card family'''
+    my_family = Table("family", metadata,
+        Column('family_id', Integer, primary_key=True),
+        Column('family_name', String(100)),
+        Column('cards_in_family', Integer),
+        Column('types_in_family', Integer),
+        Column('avg_attack', Float),
+        Column('avg_defence', Float),)
 
-my_subtype = Table("subType", metadata,
-    Column('subType_id', Integer, primary_key=True),
-    Column('cardType_id', Integer),
-    Column('subType_name', String(100)),
-    Column('cards_in_subType', Integer),
-    Column(' ', Integer),
-    Column('cardType', String(100)),)
+    my_family.create(engine)
+    return my_family
 
-my_subtype.create()
+def my_cardType_table():
+    '''This function creates and returns table for cardType'''
+    my_cardType = Table("cardType", metadata,
+        Column('cardType_id', Integer, primary_key=True),
+        Column('cardType_name', String(100)),
+        Column('cards_in_cardType', Integer),
+        Column('url', String(100), nullable=true),
+        Column('number_of_subtypes', Integer),)
 
-my_family = Table("family", metadata,
-    Column('family_id', Integer, primary_key=True),
-    Column('family_name', String(100)),
-    Column('cards_in_family', Integer),
-    Column('types_in_family', Integer),
-    Column('avg_attack', Integer),
-    Column('avg_defence', Integer),)
+    my_cardType.create(engine)
+    return my_cardType
 
-my_family.create()
+'''
+conn = engine.connect()
+my_cards=my_cards_table()
+ins = my_cards.insert().values(subType_id=2, cardType_id=3, family_id=4, name="", text="", cardType="",
+                               subType="", family="", attack="", defense="", level="", price=1.9, url="")
+result1= conn.execute(ins)
+result2= conn.execute(select([my_cards]))
 
-my_cardType = Table("cardType", metadata,
-    Column('cardType_id', Integer, primary_key=True),
-    Column('cardType_name', String(100)),
-    Column('cards_in_cardType', Integer),
-    Column('url', String(100)),
-    Column('number_of_subtypes', Integer),)
-
-my_cardType.create()
+print(list(result2))
+'''
 
