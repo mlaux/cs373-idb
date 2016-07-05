@@ -15,7 +15,7 @@ endif
 .pylintrc:
 	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
-IDB1.html: models.py
+IDB1.html: app/models.py
 	pydoc3 -w models
 
 IDB1.log:
