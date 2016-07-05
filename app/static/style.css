@@ -3,6 +3,6 @@
     width: 128px;
 }
 
-#main-images-carousel {
+#main-images-carousel, .carousel-inner {
     height: 340px;
 }
