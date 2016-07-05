@@ -4,7 +4,6 @@
 
 '''Creates tables for each of the 4 models with its attributes'''
 
-from flask import Flask
 from sqlalchemy import *
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 from sqlalchemy import create_engine

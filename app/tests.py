@@ -8,7 +8,6 @@
 from unittest import main, TestCase
 from sqlalchemy import *
 from sqlalchemy import create_engine
-
 from models import my_cards_table
 
 
