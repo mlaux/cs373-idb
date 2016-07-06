@@ -17,17 +17,17 @@ def my_cards_table():
         Column('card_id', Integer, primary_key=True),
         Column('subType_id', Integer),
         Column('cardType_id', Integer),
-        Column('family_id', Integer, nullable=true),
+        Column('family_id', Integer, nullable=True),
         Column('name', String(100)),
         Column('text', String(1000)),
         Column('cardType', String(100)),
         Column('subType', String(100)),
-        Column('family', String(100), nullable=true),
-        Column('attack', Integer, nullable=true),
-        Column('defense', Integer, nullable=true),
-        Column('level', Integer, nullable=true),
-        Column('price', Float, nullable=true),
-        Column('url', String(100), nullable=true),)
+        Column('family', String(100), nullable=True),
+        Column('attack', Integer, nullable=True),
+        Column('defense', Integer, nullable=True),
+        Column('level', Integer, nullable=True),
+        Column('price', Float, nullable=True),
+        Column('url', String(100), nullable=True),)
 
     my_cards.create(engine)
     return my_cards
@@ -39,7 +39,7 @@ def my_subtype_table():
         Column('cardType_id', Integer),
         Column('subType_name', String(100)),
         Column('cards_in_subType', Integer),
-        Column('avg_price_subtype', Float, nullable=true),
+        Column('avg_price_subtype', Float, nullable=True),
         Column('cardType', String(100)),)
 
     my_subtype.create(engine)
@@ -64,7 +64,7 @@ def my_cardType_table():
         Column('cardType_id', Integer, primary_key=True),
         Column('cardType_name', String(100)),
         Column('cards_in_cardType', Integer),
-        Column('url', String(100), nullable=true),
+        Column('url', String(100), nullable=True),
         Column('number_of_subtypes', Integer),)
 
     my_cardType.create(engine)

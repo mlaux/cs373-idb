@@ -17,6 +17,7 @@ endif
 
 IDB1.html: app/models.py
 	pydoc3 -w app.models
+	mv app.models.html models.html
 
 IDB1.log:
 	git log > IDB1.log
