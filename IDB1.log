@@ -1,3 +1,28 @@
+commit 642c2f9655c4ae39c65e74c7255930d88118fb91
+Merge: 8e4240f eb3b24e
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 19:00:50 2016 -0500
+
+    Merge branch 'master' of github.com:mlaux/cs373-idb
+
+commit 8e4240f7f6077302c0758f3a5d4e2f4358ff632b
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 18:59:43 2016 -0500
+
+    fix makefile, add models.html
+
+commit eb3b24ecf8c385b65a6f87a0868e24cbdda8a37f
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 5 18:51:13 2016 -0500
+
+    fixed models
+
+commit cfbb6a7fb5fabcdd8cd868aa6480c7679e5bbef9
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 18:28:26 2016 -0500
+
+    add the log
+
 commit 9602063dd3f8f03e45c3b6a8824be8bdaf7cf9d5
 Author: Asad Valliani <asadv988@gmail.com>
 Date:   Tue Jul 5 18:03:48 2016 -0500
