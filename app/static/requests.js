@@ -50,8 +50,26 @@ function numIssues(){
 
 	mattIssues = 0;
 	bradenIssues = 0;
+	asadIssues = 0;
+	kevinIssues = 0;
+	chidiIssues = 0;
+	jeffIssues = 0;
 
 	while(issues.message != "Not Found"){
+
+		if (issues.user.login == "mlaux")
+			mattIssues += 1;
+		else if (issues.user.login == "bstotmeister" || issues.user.login == "bradenstotmeister")
+			bradenIssues += 1;
+		else if (issues.user.login == "asad988")
+			asadIssues += 1;
+		else if (issues.user.login == "KevinP0ng")
+			kevinIssues += 1;
+		else if (issues.user.login == "ChidiOmen")
+			chidiIssues += 1;
+		else if (issues.user.login == "jtaubejr")
+			jeffIssues += 1;
+
 		count += 1;
 		url = "https://api.github.com/repos/mlaux/cs373-idb/issues/" + count;
 		issuesapi.open("GET", url, false);
@@ -61,6 +79,12 @@ function numIssues(){
 	}
 
 	document.getElementById("totalIssues").innerHTML = count;
+	document.getElementById("mattIssues").innerHTML = mattIssues;
+	document.getElementById("bradenIssues").innerHTML = bradenIssues;
+	document.getElementById("asadIssues").innerHTML = asadIssues;
+	document.getElementById("kevinIssues").innerHTML = kevinIssues;
+	document.getElementById("chidiIssues").innerHTML = chidiIssues;
+	document.getElementById("jeffIssues").innerHTML = jeffIssues;
 }
 
 // console.log(gitapi.status);
