@@ -15,7 +15,6 @@ def scrape_card(card_name):
     print('    ' + card_name)
     with urllib.request.urlopen(CARD_DATA_ENDPOINT % card_name) as fd:
         val = json.loads(fd.read().decode('utf-8'))
-        print(val)
 
     with urllib.request.urlopen(CARD_IMAGE_ENDPOINT % card_name) as fd:
         out = open('%s.jpg' % card_name, 'wb')
@@ -29,14 +28,12 @@ def scrape_set(set_name):
         for card in val['data']['cards']:
             name = card['name']
             scrape_card(name)
-            break
 
 def scrape():
     with urllib.request.urlopen(CARD_SETS_ENDPOINT) as fd:
         all_sets = json.loads(fd.read().decode('utf-8'))
         for set_name in all_sets:
             scrape_set(set_name)
-            break
 
 if __name__ == '__main__':
     scrape()
