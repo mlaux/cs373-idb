@@ -78,7 +78,7 @@ function numIssues(){
 
 	}
 
-	document.getElementById("totalIssues").innerHTML = count;
+	document.getElementById("totalIssues").innerHTML = count - 1;
 	document.getElementById("mattIssues").innerHTML = mattIssues;
 	document.getElementById("bradenIssues").innerHTML = bradenIssues;
 	document.getElementById("asadIssues").innerHTML = asadIssues;
