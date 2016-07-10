@@ -40,6 +40,29 @@ function numCommits() {
 	document.getElementById("totalCommits").innerHTML = totalCommits;	
 }
 
+function numIssues(){
+	var count = 1;
+	var url = "https://api.github.com/repos/mlaux/cs373-idb/issues/" + count;
+	var issuesapi = new XMLHttpRequest();
+	issuesapi.open("GET", url, false);
+	issuesapi.send();
+	var issues = JSON.parse(issuesapi.responseText);
+
+	mattIssues = 0;
+	bradenIssues = 0;
+
+	while(issues.message != "Not Found"){
+		count += 1;
+		url = "https://api.github.com/repos/mlaux/cs373-idb/issues/" + count;
+		issuesapi.open("GET", url, false);
+		issuesapi.send();
+		issues = JSON.parse(issuesapi.responseText);
+
+	}
+
+	document.getElementById("totalIssues").innerHTML = count;
+}
+
 // console.log(gitapi.status);
 // console.log(gitapi.statusText);
 
