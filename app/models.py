@@ -11,7 +11,7 @@ from sqlalchemy import create_engine
 engine = create_engine('sqlite:///:memory:', echo=True)
 metadata = MetaData()
 
-def my_cards_table():
+def get_cards_table():
     '''This function creates and returns table for cards'''
     my_cards = Table('cards', metadata,
         Column('card_id', Integer, primary_key=True),
@@ -29,10 +29,10 @@ def my_cards_table():
         Column('price', Float, nullable=True),
         Column('url', String(100), nullable=True),)
 
-    my_cards.create(engine)
+    my_cards.create(engine, checkfirst=True)
     return my_cards
 
-def my_subtype_table():
+def get_subtype_table():
     '''This function creates and returns table for card subType'''
     my_subtype = Table("subType", metadata,
         Column('subType_id', Integer, primary_key=True),
@@ -42,10 +42,10 @@ def my_subtype_table():
         Column('avg_price_subtype', Float, nullable=True),
         Column('cardType', String(100)),)
 
-    my_subtype.create(engine)
+    my_subtype.create(engine, checkfirst=True)
     return my_subtype
 
-def my_family_table():
+def get_family_table():
     '''This function creates and returns table for card family'''
     my_family = Table("family", metadata,
         Column('family_id', Integer, primary_key=True),
@@ -55,10 +55,10 @@ def my_family_table():
         Column('avg_attack', Float),
         Column('avg_defence', Float),)
 
-    my_family.create(engine)
+    my_family.create(engine, checkfirst=True)
     return my_family
 
-def my_cardType_table():
+def get_cardType_table():
     '''This function creates and returns table for cardType'''
     my_cardType = Table("cardType", metadata,
         Column('cardType_id', Integer, primary_key=True),
@@ -67,12 +67,12 @@ def my_cardType_table():
         Column('url', String(100), nullable=True),
         Column('number_of_subtypes', Integer),)
 
-    my_cardType.create(engine)
+    my_cardType.create(engine, checkfirst=True)
     return my_cardType
 
 '''
 conn = engine.connect()
-my_cards=my_cards_table()
+my_cards=get_cards_table()
 ins = my_cards.insert().values(subType_id=2, cardType_id=3, family_id=4, name="", text="", cardType="",
                                subType="", family="", attack="", defense="", level="", price=1.9, url="")
 result1= conn.execute(ins)
