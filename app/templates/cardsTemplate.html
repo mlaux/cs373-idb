@@ -1,0 +1,39 @@
+{% extends "skeleton.html" %}
+{% block title %}Card Types{% endblock %}
+{% block content %}
+<table class="table table-hover">
+    <tr>
+        <th>Card Image</th>
+        <th>Information</th>
+    </tr>
+    <tr>
+        <td><img src="{{url_for('static', filename='normal_monster.jpg')}}" class="about-image"></td>
+        <td>
+            <table style="font-family: Rockwell" border="2" width="100%">
+                <tr><th>Name: </th><th>hello</th></tr>
+                <tr><th>Text: </th><th>hello</th></tr>
+                <tr><th>cardType:    </th><th>hello</th></tr>
+                <tr><th>subType: </th><th>hello</th></tr>
+                <tr><th>family: </th><td>hello</td></tr>
+                <tr><th>attack: </th><th>hello</th></tr>
+                <tr><th>defence: </th><th>hello</th></tr>
+                <tr><th>level: </th><th>hello</th></tr>
+                <tr><th>price: </th><th>hello</th></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<table width="700" align="center" border="2">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+    </tr>
+    <tr>
+        <td>enter id</td>
+        <td>enter name</td>
+        <td>enter type</td>
+    </tr>
+</table>
+{% endblock %}
