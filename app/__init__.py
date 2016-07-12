@@ -26,6 +26,6 @@ def subtypes_page():
 def families_page():
     return render_template('families.html')
 
+
 if __name__ == "__main__":
     app.run()
-

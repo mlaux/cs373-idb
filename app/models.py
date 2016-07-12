@@ -14,7 +14,7 @@ STAGING_HOST = '45.55.237.77'
 PRODUCTION_HOST = '104.236.244.154'
 
 USERNAME = 'postgres'
-PASSWORD = getenv('PGSQL_PASSWORD')
+PASSWORD = 'yugioh'
 DB_NAME = 'its-time-to-duel'
 
 #engine = create_engine('sqlite:///:memory:', echo=True)
@@ -100,5 +100,3 @@ conn.execute(ins)
 result2= conn.execute(select([my_cards]))
 
 '''
-
-

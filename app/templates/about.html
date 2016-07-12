@@ -69,16 +69,29 @@
     <div class="col-lg-12">
         <h3>Stats</h3>
         <ul>
-            <li>Total Number of Commits: 82</li>
+            <li>Total Number of Commits: 83</li>
             <li>Total Number of Issues: <span id="totalIssues"></span></li>
             <li>
               Total Number of Unit Tests: 12  <button id="button">Run Tests</button>
               <!-- <script>
-                document.getElementById("button").onclick = function () {
+                function runScript () {
                   var request = new XMLHttpRequest();
-                  var url = "app/tests";
-                  request
-                }
+                  request.onreadystatechange = function () {
+                    if (request.readyState === 4) {
+                      if (request.status === 200) {
+                        alert('Ran the script, the result was ' + request.responseText);
+                      }
+                      else {
+                        alert('Something went wrong, status was ' + request.status);
+                      }
+                    }
+                  };
+                  request.open('GET', '/run_tests', true);
+                  request.send(null);
+                  return false;
+                };
+
+                document.getElementById('button').onclick = runScript;
               </script> -->
             </li>
             <li><a href="http://docs.itstimetoduel.apiary.io/">Apiary API</a></li>
