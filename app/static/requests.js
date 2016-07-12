@@ -25,7 +25,7 @@ function numCommits() {
 	  	else if (obj[i].commit.author.name == "bstotmeister" || obj[i].commit.author.name == "Braden Stotmeister")
 	      BradenCount += 1;
 	  	else if (obj[i].commit.author.name == "Jeff Taube")
-	      AsadCount += 1;
+	      JeffCount += 1;
 	  	else if (obj[i].commit.author.name == "Kevin Ong")
 	      KevinCount += 1;
 	}
