@@ -1,38 +1,41 @@
 {% extends "skeleton.html" %}
 {% block title %}Cards{% endblock %}
 {% block content %}
-<table class="table table-hover">
+<table class="table table-hover" id="card_table">
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Image</th>
         <th>Type</th>
         <th>Subtype</th>
         <th>Family</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>Jinzo</td>
-        <td><img src="{{ url_for('static', filename='jinzo.jpg' ) }}" alt="..." style="height:200px;"></td>
-        <td>Effect Monster</td>
-        <td>Machine/Effect</td>
-        <td>Dark</td>
-    </tr>
-	    <tr>
-        <td>2</td>
-        <td>Blue-Eyes White Dragon</td>
-            <td><img src="{{ url_for('static', filename='blue_eyes.jpg') }}" alt="..." style="height:200px;"></td>
-        <td>Monster</td>
-        <td>Dragon</td>
-        <td>Light</td>
-    </tr>
-	    <tr>
-        <td>3</td>
-        <td>Kuriboh</td>
-            <td><img src="{{ url_for('static', filename='kuriboh.jpg') }}" alt="..." style="height:200px;"></td>
-        <td>Effect Monster</td>
-        <td>Fiend/Effect</td>
-        <td>Dark</td>
-    </tr>
 </table>
+<script>
+        var result = {{result|safe}};
+        var table = document.getElementById("card_table");
+        var i = 0;
+        for (var item in result) {
+            var row = document.createElement("tr");
+            var cardid = document.createElement("td");
+            var cardname = document.createElement("td");
+            var type1 = document.createElement("td");
+            var subtype = document.createElement("td");
+            var family = document.createElement("td");
+            var cardlink= document.createElement("a");
+            cardlink.href="/cardsTemplate";
+            cardname.appendChild(cardlink);
+            row.appendChild(cardid);
+            row.appendChild(cardname);
+            row.appendChild(type1);
+            row.appendChild(subtype);
+            row.appendChild(family);
+            table.appendChild(row);
+            cardid.innerHTML = result[i][0];
+            cardlink.innerHTML = result[i][4];
+            type1.innerHTML = result[i][6];
+            subtype.innerHTML = result[i][7];
+            family.innerHTML = result[i][8];
+            i+=1;
+        }
+</script>
 {% endblock %}
