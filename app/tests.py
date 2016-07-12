@@ -45,7 +45,7 @@ class TestModels(TestCase):
         result2 = conn.execute(select([my_cards]))
 
         self.assertEquals(
-            [(1, 2, 3, 4, "Blue-Eyes White Dragon", "legnedary dragon", "monster", "Dragon", "light", 3000,
+            [(1, 2, 3, 4, "Blue-Eyes White Dragon", "legendary dragon", "monster", "Dragon", "light", 3000,
               2500, 8, 1.9,
               "http://static.api3.studiobebop.net/ygo_data/card_images/Blue_Eyes_White_Dragon.jpg")],
             list(result2))
