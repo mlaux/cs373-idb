@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import subprocess
 
 app = Flask(__name__)
 
@@ -26,6 +27,9 @@ def subtypes_page():
 def families_page():
     return render_template('families.html')
 
+@app.route("/run_tests")
+def run_tests():
+    return subprocess.getoutput('python3 tests.py')
 
 if __name__ == "__main__":
     app.run()
