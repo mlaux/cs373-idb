@@ -3,7 +3,7 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, sel
 from sqlalchemy import create_engine
 from os import getenv
 import json
-from models import my_family, my_type, my_subtype, my_cards
+from app.models import my_family, my_type, my_subtype, my_cards
 import subprocess
 
 STAGING_HOST = '45.55.237.77'
