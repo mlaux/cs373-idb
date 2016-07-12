@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 from os import getenv
 import json
 from models import my_family, my_type, my_subtype, my_cards
+import subprocess
 
 STAGING_HOST = '45.55.237.77'
 PRODUCTION_HOST = '104.236.244.154'
@@ -82,6 +83,10 @@ def familyTemplate_page():
 @app.route("/subTypeTemplate")
 def subTypeTemplate_page():
     return render_template('subTypeTemplate.html')
+
+@app.route("/run_tests")
+def run_test():
+    return subprocess.getoutput("python3 tests.py")
 
 if __name__ == "__main__":
     app.run()

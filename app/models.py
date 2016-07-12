@@ -21,7 +21,7 @@ DB_NAME = 'its-time-to-duel'
 engine = create_engine("postgresql://%s:%s@%s/%s" % (USERNAME, PASSWORD, STAGING_HOST, DB_NAME))
 metadata = MetaData()
 
-def my_cards_table():
+def my_cards_table(metadata, engine):
     '''This function creates and returns table for cards'''
     my_cards = Table('cards', metadata,
         Column('card_id', Integer, primary_key=True),
@@ -42,7 +42,7 @@ def my_cards_table():
     my_cards.create(engine, checkfirst=True)
     return my_cards
 
-def my_subtype_table():
+def my_subtype_table(metadata, engine):
     '''This function creates and returns table for card subType'''
     my_subtype = Table("subType", metadata,
         Column('subType_id', Integer, primary_key=True),
@@ -55,7 +55,7 @@ def my_subtype_table():
     my_subtype.create(engine, checkfirst=True)
     return my_subtype
 
-def my_family_table():
+def my_family_table(metadata, engine):
     '''This function creates and returns table for card family'''
     my_family = Table("family", metadata,
         Column('family_id', Integer, primary_key=True),
@@ -68,7 +68,7 @@ def my_family_table():
     my_family.create(engine, checkfirst=True)
     return my_family
 
-def my_cardType_table():
+def my_cardType_table(metadata, engine):
     '''This function creates and returns table for cardType'''
     my_cardType = Table("cardType", metadata,
         Column('cardType_id', Integer, primary_key=True),
@@ -80,10 +80,10 @@ def my_cardType_table():
     my_cardType.create(engine, checkfirst=True)
     return my_cardType
 
-my_family=my_family_table()
-my_type=my_cardType_table()
-my_subtype=my_subtype_table()
-my_cards=my_cards_table()
+my_family=my_family_table(metadata, engine)
+my_type=my_cardType_table(metadata, engine)
+my_subtype=my_subtype_table(metadata, engine)
+my_cards=my_cards_table(metadata, engine)
 '''
 conn = engine.connect()
 
