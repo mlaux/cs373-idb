@@ -7,14 +7,14 @@
         <th>Information</th>
     </tr>
     <tr>
-        <td><img src="{{url_for('static', filename='normal_monster.jpg')}}" class="about-image"></td>
+        <td><img src="{{url_for('static', filename='')}}{{family_data[1]}}.png" class="about-image"></td>
         <td>
             <table style="font-family: Rockwell" border="2" width="100%">
-                <tr><th>Name: </th><th>hello</th></tr>
-                <tr><th>Cards in Family: </th><th>hello</th></tr>
-                <tr><th>Types in Family: </th><td>hello</td></tr>
-                <tr><th>Average Attack:    </th><th>hello</th></tr>
-                <tr><th>Average Defence: </th><th>hello</th></tr>
+                <tr><th>Name: </th><th>{{family_data[1]}}</th></tr>
+                <tr><th>Cards in Family: </th><th>{{family_data[2]}}</th></tr>
+                <tr><th>Types in Family: </th><td>{{family_data[3]}}</td></tr>
+                <tr><th>Average Attack:    </th><th>{{family_data[4]}}</th></tr>
+                <tr><th>Average Defence: </th><th>{{family_data[5]}}</th></tr>
             </table>
         </td>
     </tr>

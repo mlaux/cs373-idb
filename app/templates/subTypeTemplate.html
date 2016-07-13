@@ -7,24 +7,48 @@
     </tr>
     <tr>
         <table style="font-family: Rockwell" border="2" width="100%">
-            <tr><th>Name: </th><th>hello</th></tr>
-            <tr><th>Cards in SubType: </th><th>hello</th></tr>
-            <tr><th>Average Price: </th><td>hello</td></tr>
-            <tr><th>Card Type: </th><th>hello</th></tr>
+            <tr><th>ID: </th><th>{{sub_data[0]}}</th></tr>
+            <tr><th>Name: </th><th>{{sub_data[2]}}</th></tr>
+            <tr><th>Cards in SubType: </th><th>{{sub_data[3]}}</th></tr>
+            <tr><th>Average Price: </th><td>{{sub_data[4]}}</td></tr>
+            <tr><th>Card Type: </th><th>{{sub_data[5]}}</th></tr>
         </table>
     </tr>
 </table>
 <br><br>
-<table width="700" align="center" border="2">
+<table class="table table-hover" id="sub_table">
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th># of Cards in Subtype</th>
+        <th>Avg. Price of Subtype</th>
         <th>Card Type</th>
     </tr>
-    <tr>
-        <td>enter id</td>
-        <td>enter name</td>
-        <td>enter type</td>
-    </tr>
 </table>
+
+<script>
+        var result = {{sublist|safe}};
+        var table = document.getElementById("sub_table");
+        var i = 0;
+        for (var item in result) {
+            var row = document.createElement("tr");
+            var cardid = document.createElement("td");
+            var cardname = document.createElement("td");
+            var card_in_st = document.createElement("td");
+            var price_of_st = document.createElement("td");
+            var card_type = document.createElement("td");
+            row.appendChild(cardid);
+            row.appendChild(cardname);
+            row.appendChild(card_in_st);
+            row.appendChild(price_of_st);
+            row.appendChild(card_type);
+            table.appendChild(row);
+            cardid.innerHTML = result[i][0];
+            cardname.innerHTML = result[i][2];
+            card_in_st.innerHTML = result[i][3];
+            price_of_st.innerHTML = result[i][4];
+            card_type.innerHTML = result[i][5];
+            i+=1;
+        }
+</script>
 {% endblock %}

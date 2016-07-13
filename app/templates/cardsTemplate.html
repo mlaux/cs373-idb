@@ -24,17 +24,43 @@
     </tr>
 </table>
 
-
-<table width="700" align="center" border="2">
+<br><br>
+<table class="table table-hover" id="card_table">
     <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Type</th>
-    </tr>
-    <tr>
-        <td>enter id</td>
-        <td>enter name</td>
-        <td>enter type</td>
+        <th>Subtype</th>
+        <th>Family</th>
     </tr>
 </table>
+
+<script>
+        var result = {{result|safe}};
+        var table = document.getElementById("card_table");
+        var i = 0;
+        for (var item in result) {
+            var row = document.createElement("tr");
+            var cardid = document.createElement("td");
+            var cardname = document.createElement("td");
+            var type1 = document.createElement("td");
+            var subtype = document.createElement("td");
+            var family = document.createElement("td");
+            var cardlink= document.createElement("a");
+            cardlink.href="/cards/"+result[i][0];
+            cardname.appendChild(cardlink);
+            row.appendChild(cardid);
+            row.appendChild(cardname);
+            row.appendChild(type1);
+            row.appendChild(subtype);
+            row.appendChild(family);
+            table.appendChild(row);
+            cardid.innerHTML = result[i][0];
+            cardlink.innerHTML = result[i][4];
+            type1.innerHTML = result[i][6];
+            subtype.innerHTML = result[i][7];
+            family.innerHTML = result[i][8];
+            i+=1;
+        }
+</script>
 {% endblock %}

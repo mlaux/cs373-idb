@@ -1,7 +1,7 @@
 {% extends "skeleton.html" %}
 {% block title %}Subtypes{% endblock %}
 {% block content %}
-<table class="table table-hover">
+<table class="table table-hover" id="sub_table">
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -9,26 +9,34 @@
         <th>Avg. Price of Subtype</th>
         <th>Card Type</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>Beast/Effect</td>
-        <td>92</td>
-        <td>1.2</td>
-        <td>Effect Monster</td>
-    </tr>
-	<tr>
-        <td>2</td>
-        <td>Magician/Effect</td>
-        <td>46</td>
-        <td>2.4</td>
-        <td>Effect Monster</td>
-    </tr>
-	<tr>
-        <td>3</td>
-        <td>Quick Spell</td>
-        <td>34</td>
-        <td>1.5</td>
-        <td>Spell</td>
-    </tr>
 </table>
+
+<script>
+        var result = {{sublist|safe}};
+        var table = document.getElementById("sub_table");
+        var i = 0;
+        for (var item in result) {
+            var row = document.createElement("tr");
+            var cardid = document.createElement("td");
+            var cardname = document.createElement("td");
+            var card_in_st = document.createElement("td");
+            var price_of_st = document.createElement("td");
+            var card_type = document.createElement("td");
+            var cardlink= document.createElement("a");
+            cardlink.href="subTypeTemplate/"+result[i][0];
+            cardname.appendChild(cardlink);
+            row.appendChild(cardid);
+            row.appendChild(cardname);
+            row.appendChild(card_in_st);
+            row.appendChild(price_of_st);
+            row.appendChild(card_type);
+            table.appendChild(row);
+            cardid.innerHTML = result[i][0];
+            cardlink.innerHTML = result[i][2];
+            card_in_st.innerHTML = result[i][3];
+            price_of_st.innerHTML = result[i][4];
+            card_type.innerHTML = result[i][5];
+            i+=1;
+        }
+</script>
 {% endblock %}

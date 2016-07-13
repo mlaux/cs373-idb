@@ -46,6 +46,18 @@ for row in families:
             row[n - 1] = ""
     mylist.append(row)
 
+#get subtype from database
+subtype = conn.execute(select([my_subtype]))
+sublist=[]
+for row in subtype:
+    row=list(row)
+    n=0
+    for i in row:
+        n += 1
+        if i == None:
+            row[n - 1] = ""
+    sublist.append(row)
+
 @app.route("/")
 def home_page():
     return render_template('home.html')
@@ -64,7 +76,7 @@ def cards_page():
 
 @app.route("/subtypes")
 def subtypes_page():
-    return render_template('subtypes.html')
+    return render_template('subtypes.html', sublist=sublist)
 
 @app.route("/families")
 def families_page():
@@ -74,20 +86,23 @@ def families_page():
 def cardsTemplate_page(card_id):
     card_id = int(card_id)
     card_data = result[card_id-1]
-    print(card_data)
-    return render_template('cardsTemplate.html', card_data=card_data)
+    return render_template('cardsTemplate.html', card_data=card_data, result=result)
 
 @app.route("/typeTemplate")
 def typeTemplate_page():
     return render_template('typeTemplate.html')
 
-@app.route("/familyTemplate")
-def familyTemplate_page():
-    return render_template('familyTemplate.html')
+@app.route("/familyTemplate/<family_id>")
+def familyTemplate_page(family_id):
+    family_id = int(family_id)
+    family_data = mylist[family_id - 1]
+    return render_template('familyTemplate.html', family_data=family_data)
 
-@app.route("/subTypeTemplate")
-def subTypeTemplate_page():
-    return render_template('subTypeTemplate.html')
+@app.route("/subTypeTemplate/<subtype_id>")
+def subTypeTemplate_page(subtype_id):
+    subtype_id = int(subtype_id)
+    sub_data = sublist[subtype_id - 1]
+    return render_template('subTypeTemplate.html',sub_data=sub_data, sublist=sublist)
 
 
 @app.route("/run_tests")
