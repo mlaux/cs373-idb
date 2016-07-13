@@ -104,6 +104,13 @@ def subTypeTemplate_page(subtype_id):
     sub_data = sublist[subtype_id - 1]
     return render_template('subTypeTemplate.html',sub_data=sub_data, sublist=sublist)
 
+@app.route("/apiv1/cards")
+def get_all_cards():
+    return json.dumps(result)
+
+@app.route("/apiv1/cards/<card_id>")
+def get_all_cards():
+    return json.dumps(result[int(card_id)-1])
 
 @app.route("/run_tests")
 def run_test():
