@@ -109,7 +109,7 @@ def get_all_cards():
     return json.dumps(result)
 
 @app.route("/apiv1/cards/<card_id>")
-def get_all_cards():
+def get_one_card(card_id):
     return json.dumps(result[int(card_id)-1])
 
 @app.route("/run_tests")
