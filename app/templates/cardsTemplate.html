@@ -7,22 +7,23 @@
         <th>Information</th>
     </tr>
     <tr>
-        <td><img src="{{url_for('static', filename='normal_monster.jpg')}}" class="about-image"></td>
+        <td><img src="{{url_for('static', filename='card_images')}}/{{card_data[4]}}.jpg" class="about-image"></td>
         <td>
             <table style="font-family: Rockwell" border="2" width="100%">
-                <tr><th>Name: </th><th>hello</th></tr>
-                <tr><th>Text: </th><th>hello</th></tr>
-                <tr><th>cardType:    </th><th>hello</th></tr>
-                <tr><th>subType: </th><th>hello</th></tr>
-                <tr><th>family: </th><td>hello</td></tr>
-                <tr><th>attack: </th><th>hello</th></tr>
-                <tr><th>defence: </th><th>hello</th></tr>
-                <tr><th>level: </th><th>hello</th></tr>
-                <tr><th>price: </th><th>hello</th></tr>
+                <tr><th>Name: </th><th>{{card_data[4]}}</th></tr>
+                <tr><th>Text: </th><th>{{card_data[5]}}</th></tr>
+                <tr><th>cardType:    </th><th>{{card_data[6]}}</th></tr>
+                <tr><th>subType: </th><th>{{card_data[7]}}</th></tr>
+                <tr><th>family: </th><td>{{card_data[8]}}</td></tr>
+                <tr><th>attack: </th><th>{{card_data[9]}}</th></tr>
+                <tr><th>defence: </th><th>{{card_data[10]}}</th></tr>
+                <tr><th>level: </th><th>{{card_data[11]}}</th></tr>
+                <tr><th>price: </th><th>{{card_data[12]}}</th></tr>
             </table>
         </td>
     </tr>
 </table>
+
 
 <table width="700" align="center" border="2">
     <tr>

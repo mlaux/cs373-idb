@@ -3,7 +3,7 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, sel
 from sqlalchemy import create_engine
 from os import getenv
 import json
-from app.models import my_family, my_type, my_subtype, my_cards
+from models import my_family, my_type, my_subtype, my_cards
 import subprocess
 
 STAGING_HOST = '45.55.237.77'
@@ -22,10 +22,12 @@ conn = engine.connect()
 #get cards from database
 result2 = conn.execute(select([my_cards]))
 result=[]
+result_id=[]
 result2=list(result2)
 for row in result2:
     n=0
     row=list(row)
+    result_id.append(row[0])
     for i in row:
         n+=1
         if i == None:
@@ -58,7 +60,7 @@ def card_types_page():
 
 @app.route("/cards")
 def cards_page():
-    return render_template('cards.html',result=result)
+    return render_template('cards.html',result=result, result_id=result_id)
 
 @app.route("/subtypes")
 def subtypes_page():
@@ -68,9 +70,12 @@ def subtypes_page():
 def families_page():
     return render_template('families.html',mylist=mylist)
 
-@app.route("/cardsTemplate")
-def cardsTemplate_page():
-    return render_template('cardsTemplate.html')
+@app.route("/cards/<card_id>")
+def cardsTemplate_page(card_id):
+    card_id = int(card_id)
+    card_data = result[card_id-1]
+    print(card_data)
+    return render_template('cardsTemplate.html', card_data=card_data)
 
 @app.route("/typeTemplate")
 def typeTemplate_page():
@@ -83,6 +88,7 @@ def familyTemplate_page():
 @app.route("/subTypeTemplate")
 def subTypeTemplate_page():
     return render_template('subTypeTemplate.html')
+
 
 @app.route("/run_tests")
 def run_test():
