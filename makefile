@@ -1,8 +1,12 @@
 FILES :=                              \
-    models.html                      \
-	app/tests.py                      \
-	app/models.py                      \
-    IDB1.log                       
+		.gitignore												\
+		makefile													\
+		apiary.apib												\
+    models.html                       \
+			app/tests.py                    \
+			app/models.py                   \
+		IDB1.log													\
+    IDB2.log
 
 ifeq ($(CI), true)
     COVERAGE := coverage
@@ -22,10 +26,14 @@ IDB1.html: app/models.py
 IDB1.log:
 	git log > IDB1.log
 
+IDB2.log:
+	git log > IDB2.log
+
 clean:
 	rm -f  .pylintrc
 	rm -f  models.html
 	rm -f  IDB1.log
+	rm -f  IDB2.log
 	rm -rf __pycache__
 
 config:
@@ -42,6 +50,5 @@ status:
 	git remote -v
 	git status
 
-test: IDB1.html IDB1.log
+test: IDB2.log
 	-$(PYLINT) app/tests.py
-
