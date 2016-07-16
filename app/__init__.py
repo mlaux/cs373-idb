@@ -116,5 +116,9 @@ def get_one_card(card_id):
 def run_test():
     return subprocess.getoutput("python3 tests.py")
 
+@app.route("/search/<table>")
+def search(table):
+    return json.dumps(table)
+
 if __name__ == "__main__":
     app.run()

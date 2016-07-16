@@ -6,7 +6,7 @@
         <th>ID</th>
         <th>Name</th>
         <th># of Cards In Type</th>
-        <th>Image</th>
+        <!-- <th>Image</th> -->
         <th># of Subtypes</th>
     </tr>
     <tr>
@@ -31,4 +31,31 @@
         <td>9</td>
     </tr>
 </table>
+<script>
+        var result = {{mylist|safe}};
+        var table = document.getElementById("family_table");
+        var i = 0;
+        for (var item in result) {
+            if(i==6 | i==7 | i==9 | i==10 | i==11 | i==12){
+                var row = document.createElement("tr");
+                var cardid = document.createElement("td");
+                var cardname = document.createElement("td");
+                var num_c_fam = document.createElement("td");
+                var num_t_fam= document.createElement("td");
+                var cardlink= document.createElement("a");
+                cardlink.href="/familyTemplate/";
+                cardname.appendChild(cardlink);
+                row.appendChild(cardid);
+                row.appendChild(cardname);
+                row.appendChild(num_c_fam);
+                row.appendChild(num_t_fam);
+                table.appendChild(row);
+                cardid.innerHTML = result[i][0];
+                cardlink.innerHTML = result[i][1];
+                num_c_fam.innerHTML = result[i][2];
+                num_t_fam.innerHTML = result[i][3];
+            }
+            i+=1;
+        }
+</script>
 {% endblock %}

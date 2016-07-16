@@ -42,6 +42,10 @@
                     <li role="presentation" {% if request.url_rule.endpoint == "families_page" %}class="active"{% endif %}>
                         <a href="/families">Families</a>
                     </li>
+                    <!-- TODO Change this families_page to the search_result -->
+                    <li role="presentation" {% if request.url_rule.endpoint == "families_page" %}class="active"{% endif %}>
+                        <input id="textInput" type="text" class="form-control" placeholder="Search for...">
+                    </li>
                 </ul>
             </nav>
             <h3 class="text-muted" style="font-family: 'Rockwell'">It's Time To Duel</h3>
