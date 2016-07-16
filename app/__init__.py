@@ -3,7 +3,7 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, sel
 from sqlalchemy import create_engine
 from os import getenv
 import json
-from app.models import my_family, my_type, my_subtype, my_cards
+from models import my_family, my_type, my_subtype, my_cards
 import subprocess
 
 STAGING_HOST = '45.55.237.77'
@@ -114,7 +114,8 @@ def get_one_card(card_id):
 
 @app.route("/run_tests")
 def run_test():
-    return subprocess.getoutput("python3 tests.py")
+    t = subprocess.getoutput("pwd") + "/"
+    return subprocess.getoutput("python3 " + t + "tests.py")
 
 if __name__ == "__main__":
     app.run()
