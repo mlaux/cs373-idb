@@ -1,7 +1,7 @@
 {% extends "skeleton.html" %}
 {% block title %}Subtypes{% endblock %}
 {% block content %}
-<table class="table table-hover" id="sub_table">
+<table class="table table-hover" id="subtype_table">
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -13,7 +13,7 @@
 
 <script>
         var result = {{sublist|safe}};
-        var table = document.getElementById("sub_table");
+        var table = document.getElementById("subtype_table");
         var i = 0;
         for (var item in result) {
             var row = document.createElement("tr");

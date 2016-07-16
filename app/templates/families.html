@@ -29,7 +29,7 @@
                 row.appendChild(num_t_fam);
                 table.appendChild(row);
                 cardid.innerHTML = result[i][0];
-                cardlink.innerHTML = result[i][1];
+                cardlink.innerHTML = (result[i][1]).charAt(0).toUpperCase() + (result[i][1]).slice(1);
                 num_c_fam.innerHTML = result[i][2];
                 num_t_fam.innerHTML = result[i][3];
             }

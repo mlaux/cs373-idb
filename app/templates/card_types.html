@@ -1,59 +1,34 @@
 {% extends "skeleton.html" %}
 {% block title %}Card Types{% endblock %}
 {% block content %}
-<table class="table table-hover">
+<table class="table table-hover" id="cardtype_table">
     <tr>
-        <th>ID</th>
         <th>Name</th>
         <th># of Cards In Type</th>
-        <!-- <th>Image</th> -->
         <th># of Subtypes</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>Normal Monster</td>
-        <td>2402</td>
-        <td><img src="{{url_for('static', filename='normal_monster.jpg')}}" class="about-image"></td>
-        <td>14</td>
-    </tr>
-	<tr>
-        <td>2</td>
-        <td>Effect Monster</td>
-        <td>2010</td>
-        <td><img src="{{url_for('static', filename='effect_monster.jpg')}}" class="about-image"></td>
-        <td>35</td>
-    </tr>
-	<tr>
-        <td>3</td>
-        <td>Spell</td>
-        <td>1402</td>
-        <td><img src="{{url_for('static', filename='spell.jpg')}}" class="about-image"></td>
-        <td>9</td>
-    </tr>
 </table>
+
 <script>
-        var result = {{mylist|safe}};
-        var table = document.getElementById("family_table");
+        var result = {{tlist|safe}};
+        var table = document.getElementById("cardtype_table");
         var i = 0;
         for (var item in result) {
-            if(i==6 | i==7 | i==9 | i==10 | i==11 | i==12){
+            if(i==1 | i==2 | i==7){
                 var row = document.createElement("tr");
-                var cardid = document.createElement("td");
                 var cardname = document.createElement("td");
-                var num_c_fam = document.createElement("td");
-                var num_t_fam= document.createElement("td");
+                var card_in_t = document.createElement("td");
+                var num_of_st = document.createElement("td");
                 var cardlink= document.createElement("a");
-                cardlink.href="/familyTemplate/";
+                cardlink.href="typeTemplate/"+result[i][1];
                 cardname.appendChild(cardlink);
-                row.appendChild(cardid);
                 row.appendChild(cardname);
-                row.appendChild(num_c_fam);
-                row.appendChild(num_t_fam);
+                row.appendChild(card_in_t);
+                row.appendChild(num_of_st);
                 table.appendChild(row);
-                cardid.innerHTML = result[i][0];
-                cardlink.innerHTML = result[i][1];
-                num_c_fam.innerHTML = result[i][2];
-                num_t_fam.innerHTML = result[i][3];
+                cardlink.innerHTML = (result[i][1]).toUpperCase();
+                card_in_t.innerHTML = result[i][2];
+                num_of_st.innerHTML = result[i][4];
             }
             i+=1;
         }

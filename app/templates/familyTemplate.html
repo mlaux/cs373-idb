@@ -20,14 +20,42 @@
     </tr>
 </table>
 
-<table width="700" align="center" border="2">
+<table width="700" align="center" border="2", id="fam_table">
     <tr>
         <th>ID</th>
         <th>Name</th>
-    </tr>
-    <tr>
-        <td>enter id</td>
-        <td>enter name</td>
+        <th>Type</th>
+        <th>Subtype</th>
+        <th>Family</th>
     </tr>
 </table>
+
+<script>
+        var result = {{flist|safe}};
+        var table = document.getElementById("fam_table");
+        var i = 0;
+        for (var item in result) {
+            var row = document.createElement("tr");
+            var cardid = document.createElement("td");
+            var cardname = document.createElement("td");
+            var type1 = document.createElement("td");
+            var subtype = document.createElement("td");
+            var family = document.createElement("td");
+            var cardlink= document.createElement("a");
+            cardlink.href="/cards/"+result[i][0];
+            cardname.appendChild(cardlink);
+            row.appendChild(cardid);
+            row.appendChild(cardname);
+            row.appendChild(type1);
+            row.appendChild(subtype);
+            row.appendChild(family);
+            table.appendChild(row);
+            cardid.innerHTML = result[i][0];
+            cardlink.innerHTML = result[i][4];
+            type1.innerHTML = result[i][6];
+            subtype.innerHTML = result[i][7];
+            family.innerHTML = result[i][8];
+            i+=1;
+        }
+</script>
 {% endblock %}

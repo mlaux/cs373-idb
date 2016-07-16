@@ -20,9 +20,9 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th># of Cards in Subtype</th>
-        <th>Avg. Price of Subtype</th>
-        <th>Card Type</th>
+        <th>Type</th>
+        <th>Subtype</th>
+        <th>Family</th>
     </tr>
 </table>
 
@@ -34,20 +34,23 @@
             var row = document.createElement("tr");
             var cardid = document.createElement("td");
             var cardname = document.createElement("td");
-            var card_in_st = document.createElement("td");
-            var price_of_st = document.createElement("td");
-            var card_type = document.createElement("td");
+            var type1 = document.createElement("td");
+            var subtype = document.createElement("td");
+            var family = document.createElement("td");
+            var cardlink= document.createElement("a");
+            cardlink.href="/cards/"+result[i][0];
+            cardname.appendChild(cardlink);
             row.appendChild(cardid);
             row.appendChild(cardname);
-            row.appendChild(card_in_st);
-            row.appendChild(price_of_st);
-            row.appendChild(card_type);
+            row.appendChild(type1);
+            row.appendChild(subtype);
+            row.appendChild(family);
             table.appendChild(row);
             cardid.innerHTML = result[i][0];
-            cardname.innerHTML = result[i][2];
-            card_in_st.innerHTML = result[i][3];
-            price_of_st.innerHTML = result[i][4];
-            card_type.innerHTML = result[i][5];
+            cardlink.innerHTML = result[i][4];
+            type1.innerHTML = result[i][6];
+            subtype.innerHTML = result[i][7];
+            family.innerHTML = result[i][8];
             i+=1;
         }
 </script>
