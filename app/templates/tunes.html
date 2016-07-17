@@ -4,6 +4,7 @@
 <p>When playing Yu-Gi-Oh!, you may want to listen to some neat music. We've partnered up
 with the awesome guys and gals from <a href="http://sweetify.me">Sweetify</a> to bring you 
 the top genres of music for all years from 1990 to 2016.</p>
+<div id="graph-holder"></div>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 function makeRequest(url, callback) {
@@ -27,6 +28,12 @@ function makeGraphs(genres) {
         }
     }
 
+    var countsArr = [];
+    var keys = Object.keys(counts);
+    for (var k = 0; k < keys.length; k++) {
+        countsArr.push({ genre: keys[k], count: counts[keys[k]] });
+    }
+
     var width = 960,
         height = 500,
         radius = Math.min(width, height) / 2;
@@ -44,28 +51,28 @@ function makeGraphs(genres) {
 
     var pie = d3.layout.pie()
         .sort(null)
-        .value(function(d) { console.log('value ' + d); return d.population; });
+        .value(function(d) { console.log('value ' + d); return d.count; });
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#graph-holder").append("svg")
         .attr("width", width)
         .attr("height", height)
       .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-  var g = svg.selectAll(".arc")
-      .data(pie(genres))
-      .enter().append("g")
-      .attr("class", "arc");
+      var g = svg.selectAll(".arc")
+          .data(pie(countsArr))
+        .enter().append("g")
+          .attr("class", "arc");
 
-  g.append("path")
-      .attr("d", arc)
-      .style("fill", function(d) { console.log('fill ' + d); return color(d.data.age); });
+      g.append("path")
+          .attr("d", arc)
+          .style("fill", function(d) { console.log('fill ' + d); return color(d.count); });
 
-  g.append("text")
-      .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-      .attr("dy", ".35em")
-      .text(function(d) { console.log('text' + d); return d.data.age; });
-}
+      g.append("text")
+          .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+          .attr("dy", ".35em")
+          .text(function(d) { console.log('text' + d); return d.genre; });
+};
 
 function loadGenres(years) {
     var genres = [];
