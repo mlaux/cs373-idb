@@ -2,18 +2,24 @@
 {% block title %}Subtypes{% endblock %}
 {% block content %}
 <table class="table table-hover" id="subtype_table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th># of Cards in Subtype</th>
-        <th>Avg. Price of Subtype</th>
-        <th>Card Type</th>
-    </tr>
+    <thead>
+        <tr>
+            <th data-sort="int">ID</th>
+            <th data-sort="string">Name</th>
+            <th data-sort="string"># of Cards in Subtype</th>
+            <th data-sort="string">Avg. Price of Subtype</th>
+            <th data-sort="string">Card Type</th>
+        </tr>
+    </thead>
+    <tbody id="subtype_table_body">
+
+    </tbody>
 </table>
 
 <script>
+function populate_cards() {
         var result = {{sublist|safe}};
-        var table = document.getElementById("subtype_table");
+        var table = document.getElementById("subtype_table_body");
         var i = 0;
         for (var item in result) {
             var row = document.createElement("tr");
@@ -38,5 +44,8 @@
             card_type.innerHTML = result[i][5];
             i+=1;
         }
+        $("#subtype_table").stupidtable();
+}
+window.onload = populate_cards;
 </script>
 {% endblock %}
