@@ -18,6 +18,10 @@
     margin: 0 auto;
 }
 
+.card-image {
+    width: 160px;
+}
+
 .bio ul {
     list-style-type: none;
     margin: 0;
