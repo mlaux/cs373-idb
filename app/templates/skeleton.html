@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     {% endblock %}
 </head>
-<body style="background-color:lightgrey;">
+<body>
     <div class="container">
         <div class="header clearfix">
             <nav>
@@ -52,9 +52,10 @@
         </div>
 
         {% block content %}{% endblock %}
-        {{ request.url_rule.endpoint }}
         <footer class="footer">
-            <p>&copy; 2016 It's Time To Duel, Inc.</p>
+            <p>&copy; 2016 It's Time To Duel, Inc. | 
+            <a href="/tunes">Sweet Tunes from Sweetify</a>
+            </p>
         </footer>
 
     </div> <!-- /container -->

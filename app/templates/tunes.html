@@ -1,0 +1,42 @@
+{% extends "skeleton.html" %}
+{% block title %}Cards{% endblock %}
+{% block content %}
+<script>
+function makeRequest(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            callback(JSON.parse(xhr.responseText));
+        }
+    };
+    xhr.open('GET', url);
+    xhr.send();
+}
+
+function loadGenres(years) {
+    var genres = [];
+    var loadGenre = function(index) {
+        if (index >= years.length) {
+            console.log(genres);
+            return;
+        }
+
+        makeRequest('http://sweetify.me/api/years/' + years[k], function(year) {
+            genres.push(year.result.top_genre_name);
+            loadGenre(index + 1);
+        });
+    };
+
+    loadGenre(0);
+}
+
+function loadYears() {
+    makeRequest('http://sweetify.me/api/years', function(years) {
+        loadGenres(years.result);
+    });
+}
+
+window.onload = loadYears;
+</script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+{% endblock %}

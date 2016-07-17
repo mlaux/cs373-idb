@@ -94,6 +94,10 @@ def subtypes_page():
 def families_page():
     return render_template('families.html',mylist=mylist)
 
+@app.route("/tunes")
+def tunes_page():
+    return render_template('tunes.html')
+
 @app.route("/cards/<card_id>")
 def cardsTemplate_page(card_id):
     card_id = int(card_id)
