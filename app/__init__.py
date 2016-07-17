@@ -149,8 +149,8 @@ def get_one_card(card_id):
 
 @app.route("/run_tests")
 def run_test():
-    t = subprocess.getoutput("pwd")
-    return subprocess.getoutput("python3 " + t + "tests.py")
+    t = "/var/www/cs373-idb/app/tests.py"
+    return subprocess.getoutput("python3 " + t)
 
 def format_list(cards_st):
     s_cards = []
