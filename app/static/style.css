@@ -4,8 +4,6 @@
     max-width: 100%;
     height: 160px;
 
-    padding-top: 100%;
-
     border-radius: 50%;
 
     background-position-x: center;
@@ -13,6 +11,10 @@
     background-repeat: no-repeat;
 
     background-size: cover;
+}
+
+.bio ul {
+    list-style-type: none;
 }
 
 #main-images-carousel, .carousel-inner {
