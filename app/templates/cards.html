@@ -31,14 +31,16 @@ function populate_cards() {
         var cardlink = document.createElement("a");
         var typelink = document.createElement("a");
         var subtypelink = document.createElement("a");
+        var familylink = document.createElement("a");
 
         cardlink.href = "/cards/"+result[i][0];
         cardname.appendChild(cardlink);
         typelink.href = "/typeTemplate/"+result[i][6];
         type1.appendChild(typelink);
-        //result[i][1] returns the ID (int) of the subtype
         subtypelink.href = "/subTypeTemplate/"+result[i][1];
-        subtype.appendChild(typelink);
+        subtype.appendChild(subtypelink);
+        familylink.href = "/familyTemplate/"+result[i][2];
+        family.appendChild(familylink);
 
         row.appendChild(cardid);
         row.appendChild(cardname);
@@ -49,10 +51,11 @@ function populate_cards() {
 
         cardid.innerHTML = result[i][0];
         cardlink.innerHTML = result[i][4];
-        //subtype.innerHTML = result[i][7];
-        subtypelink.innterHTML = result[i][7];
-        family.innerHTML = result[i][8];
         typelink.innerHTML = result[i][6];
+        //subtype.innerHTML = result[i][7];
+        subtypelink.innerHTML = result[i][7];
+        //family.innerHTML = result[i][8];
+        familylink.innerHTML = result[i][8];
 
         i += 1;
     }
