@@ -48,7 +48,10 @@ class TestModels(TestCase):
 
         self.assertEquals([(1, 1, 2, 3, "blak","", "", "", "", 1, 1, 1, 1.0, "")], list(result2))
 
+    def test_my_cards_table_2(self):
+        """test cases for my_cards_tables"""
 
+        # testcase 2
         ins = my_cards.insert().values(subType_id=2, cardType_id=3, family_id=4, name="Blue-Eyes White Dragon",
                                        text="legendary dragon", cardType="monster",
                                        subType="Dragon", family="light", attack=3000, defense=2500, level=8, price=1.9,
@@ -63,7 +66,10 @@ class TestModels(TestCase):
               "http://static.api3.studiobebop.net/ygo_data/card_images/Blue_Eyes_White_Dragon.jpg")],
             list(result2))
 
+    def test_my_cards_table_3(self):
+        """test cases for my_cards_tables"""
 
+        #testcase 3
         ins = my_cards.insert().values(subType_id=2, cardType_id=3, name="", text="", cardType="", subType="")
         conn.execute(ins)
         result2 = conn.execute(select([my_cards]))
@@ -84,14 +90,19 @@ class TestModels(TestCase):
 
         self.assertEquals([(1, 3, "", "", 1.9, ""), (5, 1, '', 1, 1.0, '')], list(result2))
 
+    def test_my_subtype_2(self):
+        """test cases for my_subtype_table"""
+
         # testcase2
         conn.execute(my_cards.delete())
         result2 = conn.execute(select([my_cards]))
 
         self.assertEquals([], list(result2))
 
-        # testcase 3
+    def test_my_subtype_3(self):
+        """test cases for my_subtype_table"""
 
+        # testcase 3
         ins = my_cards.insert().values(subType_id=1, cardType_id=2, family_id=3, name="blak", text="", cardType="",
                                        subType="", family="", attack=1, defense=1, level=1, price=1, url="")
         conn.execute(ins)
@@ -110,12 +121,18 @@ class TestModels(TestCase):
 
         self.assertEquals([(1, "", "", "", 1000.0, 1100.0), (3, '', 1, 1, 1.0, 1.0)], list(result2))
 
+    def test_my_family_2(self):
+        """test cases for my_family_table"""
+
         # testcase 2
         conn.execute(my_family.delete())
         result2 = conn.execute(select([my_family]))
         insert_dummy_family(my_family)
 
         self.assertEquals([], list(result2))
+
+    def test_my_family_3(self):
+        """test cases for my_family_table"""
 
         # testcase 3
         ins = my_family.insert().values(family_id = 1, family_name="light", cards_in_family="1504", types_in_family="42",
@@ -136,12 +153,18 @@ class TestModels(TestCase):
 
         self.assertEquals([(1, "", "", "", ""), (2, '', 1, '', 1)], list(result2))
 
+    def test_my_cardType_2(self):
+        """test cases for my_cardType_tables"""
+
         # testcase 2
         conn.execute(my_cardType.delete())
         result2 = conn.execute(select([my_cardType]))
         insert_dummy_cardType(my_cardType)
 
         self.assertEquals([], list(result2))
+
+    def test_my_cardType_3(self):
+        """test cases for my_cardType_tables"""
 
         # testcase 3
         ins = my_cardType.insert().values(cardType_id = 1, cardType_name="Monster", cards_in_cardType=4556, number_of_subtypes=36)
