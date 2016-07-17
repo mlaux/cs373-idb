@@ -21,7 +21,7 @@ function loadGenres(years) {
             return;
         }
 
-        makeRequest('http://sweetify.me/api/years/' + years[k], function(year) {
+        makeRequest('http://sweetify.me/api/years/' + years[index], function(year) {
             genres.push(year.result.top_genre_name);
             loadGenre(index + 1);
         });
