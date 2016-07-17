@@ -16,6 +16,7 @@
     </tbody>
 </table>
 <script>
+function populate_cards() {
     var result = {{result|safe}};
     var table = document.getElementById("card_table_body");
     var i = 0;
@@ -49,5 +50,8 @@
     }
 
     $("#card_table").stupidtable();
+}
+
+window.onload = populate_cards;
 </script>
 {% endblock %}
