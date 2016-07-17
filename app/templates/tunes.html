@@ -22,7 +22,7 @@ function makeGraphs(genres) {
     var counts = {};
     for (var k = 0; k < genres.length; k++) {
         if (!counts.hasOwnProperty(genres[k])) {
-            counts[genres[k]] = 0;
+            counts[genres[k]] = 1;
         } else {
             counts[genres[k]]++;
         }
