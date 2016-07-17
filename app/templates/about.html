@@ -77,7 +77,8 @@
                   request.onreadystatechange = function () {
                     if (request.readyState === 4) {
                       if (request.status === 200) {
-                        alert('Ran the script, the result was ' + request.responseText);
+                        var myWindow = window.open("", "Unit Tests", "scrollbars=1, width=658, height=499");
+                        myWindow.document.write(request.responseText);
                       }
                       else {
                         alert('Something went wrong, status was ' + request.status);
