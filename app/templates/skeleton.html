@@ -43,8 +43,10 @@
                         <a href="/families">Families</a>
                     </li>
                     <!-- TODO Change this families_page to the search_result -->
-                    <li role="presentation" {% if request.url_rule.endpoint == "families_page" %}class="active"{% endif %}>
-                        <input id="textInput" type="text" class="form-control" placeholder="Search for...">
+                    <li role="presentation" {% if request.url_rule.endpoint == "search" %}class="active"{% endif %}>
+                        <form method="GET" action="/search">
+                            <input id="textInput" type="text" class="form-control" placeholder="Search for..." name="query">
+                        </form>
                     </li>
                 </ul>
             </nav>

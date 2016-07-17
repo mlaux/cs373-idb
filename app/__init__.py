@@ -3,8 +3,11 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, sel
 from sqlalchemy import create_engine
 from os import getenv
 import json
-from app.models import my_family, my_type, my_subtype, my_cards
+from models import my_family, my_type, my_subtype, my_cards
 import subprocess
+from sqlalchemy.dialects.postgresql import TSVECTOR
+from sqlalchemy import func
+from sqlalchemy.sql import and_, or_
 
 STAGING_HOST = '45.55.237.77'
 PRODUCTION_HOST = '104.236.244.154'
@@ -169,9 +172,28 @@ def format_list(cards_st):
 
     return  s_cards
 
-@app.route("/search/<table>")
-def search(table):
-    return json.dumps(table)
+@app.route("/search")
+def search():
+    search= request.args.get('query')
+    if search.isdigit():
+        search_data = conn.execute(select([my_cards]).where(or_(
+            my_cards.c.text.match(search, postgresql_regconfig='english'),
+            my_cards.c.name.match(search, postgresql_regconfig='english'),
+            func.to_tsvector('english', my_cards.c.cardType).match(search, postgresql_regconfig='english'),
+            func.to_tsvector('english', my_cards.c.subType).match(search, postgresql_regconfig='english'),
+            func.to_tsvector('english', my_cards.c.family).match(search, postgresql_regconfig='english'),
+            my_cards.c.attack==int(search),
+            my_cards.c.defense==int(search))))
+    else:
+        search_data = conn.execute(select([my_cards]).where(or_(
+            my_cards.c.text.match(search, postgresql_regconfig='english'),
+            my_cards.c.name.match(search, postgresql_regconfig='english'),
+            func.to_tsvector('english', my_cards.c.cardType).match(search, postgresql_regconfig='english'),
+            func.to_tsvector('english', my_cards.c.subType).match(search, postgresql_regconfig='english'),
+            func.to_tsvector('english', my_cards.c.family).match(search, postgresql_regconfig='english'))))
+
+    search_list = format_list(search_data)
+    return render_template('searchTemplate.html',search_data=search_list)
 
 if __name__ == "__main__":
     app.run()
