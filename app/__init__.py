@@ -149,7 +149,7 @@ def get_one_card(card_id):
 
 @app.route("/run_tests")
 def run_test():
-    t = subprocess.getoutput("pwd") + "/"
+    t = subprocess.getoutput("pwd")
     return subprocess.getoutput("python3 " + t + "tests.py")
 
 def format_list(cards_st):
@@ -164,7 +164,7 @@ def format_list(cards_st):
         s_cards.append(row)
 
     return  s_cards
-	
+
 @app.route("/search/<table>")
 def search(table):
     return json.dumps(table)
