@@ -1,3 +1,7 @@
+.about-page {
+    text-align: center;
+}
+
 .about-image {
     display: block;
     width: 160px;
@@ -11,10 +15,13 @@
     background-repeat: no-repeat;
 
     background-size: cover;
+    margin: 0 auto;
 }
 
 .bio ul {
     list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
 }
 
 #main-images-carousel, .carousel-inner {
