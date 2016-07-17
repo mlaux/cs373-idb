@@ -33,6 +33,9 @@ function populate_cards() {
         cardlink.href = "/cards/"+result[i][0];
         cardname.appendChild(cardlink);
 
+        cardlink.href = "/typeTemplate/"+result[i][6];
+        type1.appendChild(cardLink);
+
         row.appendChild(cardid);
         row.appendChild(cardname);
         row.appendChild(type1);
