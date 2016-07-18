@@ -3,7 +3,7 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, sel
 from sqlalchemy import create_engine
 from os import getenv
 import json
-from app.models import my_family, my_type, my_subtype, my_cards
+from models import my_family, my_type, my_subtype, my_cards
 import subprocess
 from sqlalchemy.dialects.postgresql import TSVECTOR
 from sqlalchemy import func
@@ -36,6 +36,17 @@ for row in result2:
         if i == None:
             row[n-1]=""
     result.append(row)
+	
+def bubble_sort():
+    """ Implementation of bubble sort """
+    temp=result
+    for i in range(len(temp)):
+        for j in range(len(temp) - 1 - i):
+            if temp[j][0] > temp[j+1][0]:
+                temp[j], temp[j + 1] = temp[j + 1], temp[j]
+    return temp
+
+result=bubble_sort()
 
 #get family from database
 families = conn.execute(select([my_family]))
