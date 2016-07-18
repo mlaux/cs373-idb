@@ -116,7 +116,10 @@ def tunes_page():
 def cardsTemplate_page(card_id):
     card_id = int(card_id)
     card_data = result[card_id-1]
-
+	
+	#morphing jar id is 1082 but its in result[1080]
+    if card_id == 1082:
+        card_id=1080
     return render_template('cardsTemplate.html', card_data=card_data, result=result)
 
 @app.route("/typeTemplate/<type_name>")
@@ -186,13 +189,14 @@ def format_list(cards_st):
 @app.route("/search")
 def search():
     search_res= request.args.get('query')
+	search_res=search_res.replace("'","")
     temp_val = search_res.split(" ")
     search_list=[]
     for search in temp_val:
         if search.isdigit():
             search_data = conn.execute(select([my_cards]).where(or_(
-                my_cards.c.text.match(search, postgresql_regconfig='english'),
-                my_cards.c.name.match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.text).match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.name).match(search, postgresql_regconfig='english'),
                 func.to_tsvector('english', my_cards.c.cardType).match(search, postgresql_regconfig='english'),
                 func.to_tsvector('english', my_cards.c.subType).match(search, postgresql_regconfig='english'),
                 func.to_tsvector('english', my_cards.c.family).match(search, postgresql_regconfig='english'),
@@ -200,8 +204,8 @@ def search():
                 my_cards.c.defense==int(search))))
         else:
             search_data = conn.execute(select([my_cards]).where(or_(
-                my_cards.c.text.match(search, postgresql_regconfig='english'),
-                my_cards.c.name.match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.text).match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.name).match(search, postgresql_regconfig='english'),
                 func.to_tsvector('english', my_cards.c.cardType).match(search, postgresql_regconfig='english'),
                 func.to_tsvector('english', my_cards.c.subType).match(search, postgresql_regconfig='english'),
                 func.to_tsvector('english', my_cards.c.family).match(search, postgresql_regconfig='english'))))
