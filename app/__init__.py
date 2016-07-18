@@ -3,7 +3,7 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, sel
 from sqlalchemy import create_engine
 from os import getenv
 import json
-from app.models import my_family, my_type, my_subtype, my_cards
+from models import my_family, my_type, my_subtype, my_cards
 import subprocess
 from sqlalchemy.dialects.postgresql import TSVECTOR
 from sqlalchemy import func
@@ -189,7 +189,7 @@ def format_list(cards_st):
 @app.route("/search")
 def search():
     search_res= request.args.get('query')
-	search_res=search_res.replace("'","")
+    search_res=search_res.replace("'","")
     temp_val = search_res.split(" ")
     search_list=[]
     for search in temp_val:
