@@ -62,15 +62,7 @@ for row in families:
 
 #get type from database
 types = conn.execute(select([my_type]))
-tlist=[]
-for row in types:
-    row=list(row)
-    n=0
-    for i in row:
-        n += 1
-        if i == None:
-            row[n - 1] = ""
-    tlist.append(row)
+tlist=[[1, 'monster', 0, '', 0], [2, 'monster', 742, '', 0], [3, 'spell', 188, '', 0], [4, 'monster', 0, '', 0], [5, 'spell', 0, '', 0], [6, 'monster', 0, '', 0], [7, 'spell', 0, '', 0], [8, 'trap', 150, '', 0]]
 
 #get subtype from database
 subtype = conn.execute(select([my_subtype]))
