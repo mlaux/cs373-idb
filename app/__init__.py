@@ -185,25 +185,28 @@ def format_list(cards_st):
 
 @app.route("/search")
 def search():
-    search= request.args.get('query')
-    if search.isdigit():
-        search_data = conn.execute(select([my_cards]).where(or_(
-            my_cards.c.text.match(search, postgresql_regconfig='english'),
-            my_cards.c.name.match(search, postgresql_regconfig='english'),
-            func.to_tsvector('english', my_cards.c.cardType).match(search, postgresql_regconfig='english'),
-            func.to_tsvector('english', my_cards.c.subType).match(search, postgresql_regconfig='english'),
-            func.to_tsvector('english', my_cards.c.family).match(search, postgresql_regconfig='english'),
-            my_cards.c.attack==int(search),
-            my_cards.c.defense==int(search))))
-    else:
-        search_data = conn.execute(select([my_cards]).where(or_(
-            my_cards.c.text.match(search, postgresql_regconfig='english'),
-            my_cards.c.name.match(search, postgresql_regconfig='english'),
-            func.to_tsvector('english', my_cards.c.cardType).match(search, postgresql_regconfig='english'),
-            func.to_tsvector('english', my_cards.c.subType).match(search, postgresql_regconfig='english'),
-            func.to_tsvector('english', my_cards.c.family).match(search, postgresql_regconfig='english'))))
+    search_res= request.args.get('query')
+    temp_val = search_res.split(" ")
+    search_list=[]
+    for search in temp_val:
+        if search.isdigit():
+            search_data = conn.execute(select([my_cards]).where(or_(
+                my_cards.c.text.match(search, postgresql_regconfig='english'),
+                my_cards.c.name.match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.cardType).match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.subType).match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.family).match(search, postgresql_regconfig='english'),
+                my_cards.c.attack==int(search),
+                my_cards.c.defense==int(search))))
+        else:
+            search_data = conn.execute(select([my_cards]).where(or_(
+                my_cards.c.text.match(search, postgresql_regconfig='english'),
+                my_cards.c.name.match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.cardType).match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.subType).match(search, postgresql_regconfig='english'),
+                func.to_tsvector('english', my_cards.c.family).match(search, postgresql_regconfig='english'))))
 
-    search_list = format_list(search_data)
+        search_list+=format_list(search_data)
     return render_template('searchTemplate.html',search_data=search_list)
 
 if __name__ == "__main__":
