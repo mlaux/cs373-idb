@@ -29,10 +29,14 @@ function orSearch(){
 }
 
 function search(isAnd){
-        //$("#search_table_body").remove();
 
         var result = {{search_data|safe}};
         var table = document.getElementById("search_table_body");
+
+        while (table.firstChild) {
+            table.removeChild(table.firstChild);
+        }
+
         var i = 0;
         for (var item in result) {
             var row = document.createElement("tr");
@@ -75,6 +79,6 @@ function search(isAnd){
         $("#search_table").stupidtable();
 }
 // Loads "andSearch" on default
-window.onload = andSearch();
+window.onload = andSearch;
 </script>
 {% endblock %}
