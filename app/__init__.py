@@ -36,7 +36,7 @@ for row in result2:
         if i == None:
             row[n-1]=""
     result.append(row)
-	
+
 def bubble_sort():
     """ Implementation of bubble sort """
     temp=result
@@ -108,7 +108,7 @@ def tunes_page():
 def cardsTemplate_page(card_id):
     card_id = int(card_id)
     card_data = result[card_id-1]
-	
+
 	#morphing jar id is 1082 but its in result[1080]
     if card_id == 1082:
         card_id=1080
@@ -182,6 +182,10 @@ def format_list(cards_st):
 def search():
     search_res= request.args.get('query')
     search_res=search_res.replace("'","")
+    search_res=search_res.replace("!","")
+    search_res=search_res.replace("(","")
+    search_res=search_res.replace(")","")
+    search_res=search_res.replace(":","")
     temp_val = search_res.split(" ")
     search_list=[]
     for search in temp_val:
