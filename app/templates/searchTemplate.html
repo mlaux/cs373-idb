@@ -3,6 +3,8 @@
 {% block content %}
 
 <table class="table table-hover" id="search_table">
+<button onclick="andSearch()">And</button>
+<button onclick="orSearch()">Or</button>
     <thead>
         <tr>
             <th>Name</th>
@@ -18,6 +20,15 @@
 </table>
 
 <script>
+function andSearch(){
+    search(1);
+}
+
+function orSearch(){
+    search(0);
+}
+
+function search(isAnd){
         var result = {{search_data|safe}};
         var table = document.getElementById("search_table_body");
         var i = 0;
@@ -44,5 +55,7 @@
             family.innerHTML = result[i][8];
             i+=1;
         }
+}
+window.onload = search(1);
 </script>
 {% endblock %}
