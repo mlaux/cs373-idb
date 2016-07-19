@@ -112,6 +112,11 @@ def cardsTemplate_page(card_id):
 	#morphing jar id is 1082 but its in result[1080]
     if card_id == 1082:
         card_id=1080
+    if card_data[9]=="":
+        card_data[8]="N/A"
+        card_data[9] = "N/A"
+        card_data[10] = "N/A"
+        card_data[11] = "N/A"
     return render_template('cardsTemplate.html', card_data=card_data, result=result)
 
 @app.route("/typeTemplate/<type_name>")
