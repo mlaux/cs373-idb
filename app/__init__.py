@@ -3,7 +3,7 @@ from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, sel
 from sqlalchemy import create_engine
 from os import getenv
 import json
-from app.models import my_family, my_type, my_subtype, my_cards
+from models import my_family, my_type, my_subtype, my_cards
 import subprocess
 from sqlalchemy.dialects.postgresql import TSVECTOR
 from sqlalchemy import func
@@ -140,8 +140,13 @@ def familyTemplate_page(family_id):
     family_id = int(family_id)
     family_data = mylist[family_id - 1]
 
-    # get cards of family from database
-    cards_st = conn.execute(select([my_cards]).where(my_cards.c.family_id == family_id))
+    #gets family name
+    get_fam = conn.execute(select([my_family]).where(my_family.c.family_id == family_id))
+    get_fam = format_list(get_fam)
+    fam_name = get_fam[0][1]
+
+    # get cards of family from database where family name is the same
+    cards_st = conn.execute(select([my_cards]).where(my_cards.c.family == fam_name))
     s_cards = format_list(cards_st)
 
     return render_template('familyTemplate.html', family_data=family_data, flist=s_cards)
@@ -151,9 +156,15 @@ def subTypeTemplate_page(subtype_id):
     subtype_id = int(subtype_id)
     sub_data = sublist[subtype_id - 1]
 
-    # get cards of subtype from database
-    cards_st = conn.execute(select([my_cards]).where(my_cards.c.subType_id==subtype_id))
+    #gets subtype name
+    get_subtype = conn.execute(select([my_subtype]).where(my_subtype.c.subType_id == subtype_id))
+    get_subtype=format_list(get_subtype)
+    subtype_name=get_subtype[0][2]
+
+    # get cards of subtype from database where subtype name is the same
+    cards_st = conn.execute(select([my_cards]).where(my_cards.c.subType==subtype_name))
     s_cards = format_list(cards_st)
+
 
     return render_template('subTypeTemplate.html',sub_data=sub_data, sublist=s_cards)
 
