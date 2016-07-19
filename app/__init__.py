@@ -50,15 +50,7 @@ result=bubble_sort()
 
 #get family from database
 families = conn.execute(select([my_family]))
-mylist=[]
-for row in families:
-    row=list(row)
-    n=0
-    for i in row:
-        n += 1
-        if i == None:
-            row[n - 1] = ""
-    mylist.append(row)
+mylist=[[1, 'light', 0, 0, 0.0, 0.0], [2, 'dark', 0, 0, 0.0, 0.0], [3, '', 0, 0, 0.0, 0.0], [4, 'light', 0, 0, 0.0, 0.0], [5, 'dark', 0, 0, 0.0, 0.0], [6, '', 0, 0, 0.0, 0.0], [7, 'light', 184, 1, 0.0, 0.0], [8, 'dark', 195, 1, 0.0, 0.0], [9, '', 0, 0, 0.0, 0.0], [10, 'earth', 172, 1, 0.0, 0.0], [11, 'fire', 64, 1, 0.0, 0.0], [12, 'wind', 55, 1, 0.0, 0.0], [13, 'water', 72, 1, 0.0, 0.0]]
 
 #get type from database
 types = conn.execute(select([my_type]))
