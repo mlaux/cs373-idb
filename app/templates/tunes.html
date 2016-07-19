@@ -1,0 +1,101 @@
+{% extends "skeleton.html" %}
+{% block title %}Sweet Tunes{% endblock %}
+{% block content %}
+<p>When playing Yu-Gi-Oh!, you may want to listen to some neat music. We've partnered up
+with the awesome guys and gals from <a href="http://sweetify.me">Sweetify</a> to bring you 
+the top genres of music for all years from 1990 to 2016.</p>
+<div id="graph-holder"></div>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script>
+function makeRequest(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            callback(JSON.parse(xhr.responseText));
+        }
+    };
+    xhr.open('GET', url);
+    xhr.send();
+}
+
+function makeGraphs(genres) {
+    var counts = {};
+    for (var k = 0; k < genres.length; k++) {
+        if (!counts.hasOwnProperty(genres[k])) {
+            counts[genres[k]] = 1;
+        } else {
+            counts[genres[k]]++;
+        }
+    }
+
+    var countsArr = [];
+    var keys = Object.keys(counts);
+    for (var k = 0; k < keys.length; k++) {
+        countsArr.push({ index: k, genre: keys[k], count: counts[keys[k]] });
+    }
+
+    var width = 960,
+        height = 500,
+        radius = Math.min(width, height) / 2;
+
+    var color = d3.scale.category10();
+
+    var arc = d3.svg.arc()
+        .outerRadius(radius - 10)
+        .innerRadius(0);
+
+    var labelArc = d3.svg.arc()
+        .outerRadius(radius - 40)
+        .innerRadius(radius - 40);
+
+    var pie = d3.layout.pie()
+        .sort(null)
+        .value(function(d) { return d.count; });
+
+    var svg = d3.select("#graph-holder").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    var g = svg.selectAll(".arc")
+        .data(pie(countsArr))
+        .enter().append("g")
+        .attr("class", "arc");
+
+    g.append("path")
+        .attr("d", arc)
+        .style("fill", function(d) { return color(d.data.index); });
+
+    g.append("text")
+        .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+        .attr("dy", ".35em")
+        .text(function(d) { return d.data.genre; });
+};
+
+function loadGenres(years) {
+    var genres = [];
+    var loadGenre = function(index) {
+        if (index >= years.length) {
+            makeGraphs(genres);
+            return;
+        }
+
+        makeRequest('http://sweetify.me/api/years/' + years[index], function(year) {
+            genres.push(year.result.top_genre_name);
+            loadGenre(index + 1);
+        });
+    };
+
+    loadGenre(0);
+}
+
+function loadYears() {
+    makeRequest('http://sweetify.me/api/years', function(years) {
+        loadGenres(years.result);
+    });
+}
+
+window.onload = loadYears;
+</script>
+{% endblock %}

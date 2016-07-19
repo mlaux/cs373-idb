@@ -1,0 +1,83 @@
+{% extends "skeleton.html" %}
+{% block title %}Card Types{% endblock %}
+{% block content %}
+
+<table class="table table-hover" id="search_table">
+<button onclick="andSearch()">And</button>
+<button onclick="orSearch()">Or</button>
+    <thead>
+        <tr>
+            <th data-sort="string">Name</th>
+            <th data-sort="string">Text</th>
+            <th data-sort="string">Type</th>
+            <th data-sort="string">Subtype</th>
+            <th data-sort="string">Family</th>
+        </tr>
+    <tbody id="search_table_body">
+
+    </tbody>
+    </thead>
+</table>
+
+<script>
+function andSearch(){
+    search(1);
+}
+
+function orSearch(){
+    search(0);
+}
+
+function search(isAnd){
+        var result = {{search_data|safe}};
+        var table = document.getElementById("search_table_body");
+
+        while (table.firstChild) {
+            table.removeChild(table.firstChild);
+        }
+
+        var i = 0;
+        for (var item in result) {
+            var row = document.createElement("tr");
+            var cardname = document.createElement("td");
+            var cardtext = document.createElement("td");
+            var type1 = document.createElement("td");
+            var subtype = document.createElement("td");
+            var family = document.createElement("td");
+
+            var cardlink= document.createElement("a");
+            var cardlink1= document.createElement("a");
+            var cardlink2= document.createElement("a");
+            var cardlink3= document.createElement("a");
+
+            cardlink.href="/cards/"+result[i][0];
+            cardlink1.href="/typeTemplate/"+result[i][6];
+            cardlink2.href="/subTypeTemplate/"+result[i][1];
+            cardlink3.href="/familyTemplate/"+result[i][3];
+            
+            cardname.appendChild(cardlink);
+            type1.appendChild(cardlink1);
+            subtype.appendChild(cardlink2);
+            family.appendChild(cardlink3);
+
+            row.appendChild(cardname);
+            row.appendChild(cardtext);
+            row.appendChild(type1);
+            row.appendChild(subtype);
+            row.appendChild(family);
+            table.appendChild(row);
+
+            cardlink.innerHTML = result[i][4];
+            cardlink1.innerHTML = result[i][6];
+            cardlink2.innerHTML = result[i][7];
+            cardlink3.innerHTML = result[i][8];
+            cardtext.innerHTML = result[i][5];
+
+            i+=1;
+        }
+        $("#search_table").stupidtable();
+}
+// Loads "andSearch" on default
+window.onload = andSearch;
+</script>
+{% endblock %}

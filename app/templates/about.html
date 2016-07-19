@@ -2,75 +2,92 @@
 {% block title %}About{% endblock %}
 {% block content %}
 <div class="row marketing">
-    <div class="col-lg-6">
-        <h4>Matthew Laux</h4>
-        <img src="{{url_for('static', filename='matt.jpg')}}" class="about-image">
-        <ul>
-            <li>Bio: I'm studying computer science at UT and graduating in December 2016. You can find more stuff about me on <a href="http://matthewlaux.com">my website</a>.</li>
-            <li>Major Responsibilities: setting up the VPS, sysadmin/ops work, creating bootstrap template</li>
-            <li>Commits: 38</li>
-            <li>Issues: <span id="mattIssues"></span></li>
-            <li>Unit Tests: 0</li>
-        </ul>
 
-        <h4>Chester Omenukor</h4>
-        <img src="{{url_for('static', filename='chester.jpg')}}" class="about-image">
-        <ul>
-            <li>Bio: Currently a senior at UT, studying CS and Math.</li>
-            <li>Major Responsibilities: Creating UML documentation, and adding data and photos to website</li>
-            <li>Commits: 11</li>
-            <li>Issues: <span id="chidiIssues"></span></li>
-            <li>Unit Tests: 0</li>
-        </ul>
-
-        <h4>Kevin Ong</h4>
-        <img src="{{url_for('static', filename='kevin.jpg')}}" class="about-image">
-        <ul>
-            <li>Bio: I'm a senior studying Computer Science.</li>
-            <li>Major Responsibilities: Technical Writeup</li>
-            <li>Commits: 2</li>
-            <li>Issues: <span id="kevinIssues"></span></li>
-            <li>Unit Tests: 0</li>
-        </ul>
+    <div class="centered">
+        <p><b>About Site:</b>This site would be useful for both casual fans and hardcore card collectors. Collectors could use this site to find data to buy, sell, and trade their cards as well as build new decks based off of the information provided while casual fans could use the information to sell old, unused cards that collect dust in the corner of their closets. New duelists could also use this site to learn about the TCG. </p>
     </div>
 
-    <div class="col-lg-6">
-        <h4>Braden Stotmeister</h4>
-        <img src="{{url_for('static', filename='braden.jpg')}}" class="about-image">
-        <ul>
-            <li>Bio: I'm going into my fourth year at the University of Texas for computer science and electrical engineering. I enjoy long walks on the beach, watching a good movie in bed, and taking my dogs out kayaking.</li>
-            <li>Major Responsibilities: Proofing techincal document and verifying website information, registering website, implementing github api's </li>
-            <li>Commits: 12</li>
-            <li>Issues: <span id="bradenIssues"></span></li>
-            <li>Unit Tests: 0</li>
-        </ul>
+    <div class="col-lg-6 about-page">
+        <div class="bio">
+            <h3>Matthew Laux</h3>
+            <div class="about-image" style="background-image: url('{{url_for('static', filename='matt.jpg')}}')"></div>
+            <ul>
+                <li><strong>Bio</strong>: I'm studying computer science at UT and graduating in December 2016. You can find more stuff about me on <a href="http://matthewlaux.com">my website</a>.</li>
+                <li><strong>Major Responsibilities</strong>: setting up the VPS, sysadmin/ops work, creating bootstrap template</li>
+                <li><strong>Commits</strong>: 38</li>
+                <li><strong>Issues</strong>: <span id="mattIssues">16</span></li>
+                <li><strong>Unit Tests</strong>: 0</li>
+            </ul>
+        </div>
 
-        <h4>Jeffrey Taube</h4>
-        <img src="{{url_for('static', filename='jeff.jpg')}}" class="about-image">
-        <ul>
-            <li>Bio: I'm a CS student at UT Austin.</li>
-            <li>Major Responsibilities: Updating wiki page and google doc.</li>
-            <li>Commits: 7</li>
-            <li>Issues: <span id="jeffIssues"></span></li>
-            <li>Unit Tests: 0</li>
-        </ul>
+        <div class="bio">
+            <h3>Chester Omenukor</h3>
+            <div class="about-image" style="background-image: url('{{url_for('static', filename='chester.jpg')}}')"></div>
+            <ul>
+                <li><strong>Bio</strong>: Currently a senior at UT, studying CS and Math.</li>
+                <li><strong>Major Responsibilities</strong>: Creating UML documentation, and adding data and photos to website</li>
+                <li><strong>Commits</strong>: 11</li>
+                <li><strong>Issues</strong>: <span id="chidiIssues">0</span></li>
+                <li><strong>Unit Tests</strong>: 0</li>
+            </ul>
+        </div>
 
-        <h4>Asad Valliani</h4>
-        <img src="{{url_for('static', filename='asad.jpg')}}" class="about-image">
-        <ul>
-            <li>Bio: I am a senior computer science student at UT.  I enjoy playing video games, card games and board games.   I like choclate cake alot</li>
-            <li>Major Responsibilities: creating tables for the models, writing unit tests for models.py, contributing to the technical document, website design</li>
-            <li>Commits: 13</li>
-            <li>Issues: <span id="asadIssues"></span></li>
-            <li>Unit Tests: 12</li>
-        </ul>
+        <div class="bio">
+            <h3>Kevin Ong</h3>
+            <div class="about-image" style="background-image: url('{{url_for('static', filename='kevin.jpg')}}')"></div>
+            <ul>
+                <li><strong>Bio</strong>: I'm a senior studying Computer Science. I am interested in security and I enjoy finding bugs and issues in video games.</li>
+                <li><strong>Major Responsibilities</strong>: Technical Writeup, wiki page, and unit tests.</li>
+                <li><strong>Commits</strong>: 2</li>
+                <li><strong>Issues</strong>: <span id="kevinIssues">12</span></li>
+                <li><strong>Unit Tests</strong>: 0</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-lg-6 about-page">
+        <div class="bio">
+            <h3>Braden Stotmeister</h3>
+            <div class="about-image" style="background-image: url('{{url_for('static', filename='braden.jpg')}}')"></div>
+            <ul>
+                <li><strong>Bio</strong>: I'm going into my fourth year at the University of Texas for computer science and electrical engineering. I enjoy long walks on the beach, watching a good movie in bed, and taking my dogs out kayaking.</li>
+                <li><strong>Major Responsibilities</strong>: Proofing techincal document and verifying website information, registering website, implementing github api's </li>
+                <li><strong>Commits</strong>: 12</li>
+                <li><strong>Issues</strong>: <span id="bradenIssues">8</span></li>
+                <li><strong>Unit Tests</strong>: 0</li>
+            </ul>
+        </div>
+
+        <div class="bio">
+            <h3>Jeffrey Taube</h3>
+            <div class="about-image" style="background-image: url('{{url_for('static', filename='jeff.jpg')}}')"></div>
+            <ul>
+                <li><strong>Bio</strong>: I'm a CS student at UT Austin.</li>
+                <li><strong>Major Responsibilities</strong>: Updating wiki page and technical writeup. Contributing to unit tests and creating unit test button. Search for various bugs.</li>
+                <li><strong>Commits</strong>: 24</li>
+                <li><strong>Issues</strong>: <span id="jeffIssues">3</span></li>
+                <li><strong>Unit Tests</strong>: 0</li>
+            </ul>
+        </div>
+
+        <div class="bio">
+            <h3>Asad Valliani</h3>
+            <div class="about-image" style="background-image: url('{{url_for('static', filename='asad.jpg')}}')"></div>
+            <ul>
+                <li><strong>Bio</strong>: I am a senior computer science student at UT.  I enjoy playing video games, card games and board games.   I like chocolate cake a lot.</li>
+                <li><strong>Major Responsibilities</strong>: creating tables for the models, writing unit tests for models.py, contributing to the technical document, website design</li>
+                <li><strong>Commits</strong>: 33</li>
+                <li><strong>Issues</strong>: <span id="asadIssues">7</span></li>
+                <li><strong>Unit Tests</strong>: 12</li>
+            </ul>
+        </div>
     </div>
 
     <div class="col-lg-12">
         <h3>Stats</h3>
         <ul>
-            <li>Total Number of Commits: 83</li>
-            <li>Total Number of Issues: <span id="totalIssues"></span></li>
+            <li>Total Number of Commits: 112</li>
+            <li>Total Number of Issues: <span id="totalIssues">46</span></li>
             <li>
               Total Number of Unit Tests: 12  <button id="button">Run Tests</button>
               <script>
@@ -79,7 +96,8 @@
                   request.onreadystatechange = function () {
                     if (request.readyState === 4) {
                       if (request.status === 200) {
-                        alert('Ran the script, the result was ' + request.responseText);
+                        var myWindow = window.open("", "Unit Tests", "scrollbars=1, width=658, height=499");
+                        myWindow.document.write(request.responseText);
                       }
                       else {
                         alert('Something went wrong, status was ' + request.status);
@@ -124,6 +142,4 @@
         </ul>
     </div>
 </div>
-<script src="{{ url_for('static', filename='requests.js') }}" type="text/javascript"></script>
-<script> numIssues(); </script>
 {% endblock %}

@@ -2,38 +2,43 @@
 {% block title %}Families{% endblock %}
 {% block content %}
 <table class="table table-hover" id="family_table">
+    <thead>
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th># of Cards in Family</th>
-		<th># of Types in Family</th>
+        <th data-sort="string">Name</th>
+        <th data-sort="int"># of Cards in Family</th>
+		<th data-sort="int"># of Types in Family</th>
     </tr>
+    </thead>
+    <tbody id="family_table_body">
+
+    </tbody>
 </table>
 <script>
+function populate_cards() {
         var result = {{mylist|safe}};
-        var table = document.getElementById("family_table");
+        var table = document.getElementById("family_table_body");
         var i = 0;
         for (var item in result) {
             if(i==6 | i==7 | i==9 | i==10 | i==11 | i==12){
                 var row = document.createElement("tr");
-                var cardid = document.createElement("td");
                 var cardname = document.createElement("td");
                 var num_c_fam = document.createElement("td");
                 var num_t_fam= document.createElement("td");
                 var cardlink= document.createElement("a");
                 cardlink.href="/familyTemplate/"+result[i][0];
                 cardname.appendChild(cardlink);
-                row.appendChild(cardid);
                 row.appendChild(cardname);
                 row.appendChild(num_c_fam);
                 row.appendChild(num_t_fam);
                 table.appendChild(row);
-                cardid.innerHTML = result[i][0];
-                cardlink.innerHTML = result[i][1];
+                cardlink.innerHTML = (result[i][1]).charAt(0).toUpperCase() + (result[i][1]).slice(1);
                 num_c_fam.innerHTML = result[i][2];
                 num_t_fam.innerHTML = result[i][3];
             }
             i+=1;
         }
+        $("#family_table").stupidtable();
+}
+window.onload = populate_cards;
 </script>
 {% endblock %}

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     {% endblock %}
 </head>
-<body style="background-color:lightgrey;">
+<body>
     <div class="container">
         <div class="header clearfix">
             <nav>
@@ -42,15 +42,22 @@
                     <li role="presentation" {% if request.url_rule.endpoint == "families_page" %}class="active"{% endif %}>
                         <a href="/families">Families</a>
                     </li>
+                    <!-- TODO Change this families_page to the search_result -->
+                    <li role="presentation" {% if request.url_rule.endpoint == "search" %}class="active"{% endif %}>
+                        <form method="GET" action="/search">
+                            <input id="textInput" type="text" class="form-control" placeholder="Search for..." name="query">
+                        </form>
+                    </li>
                 </ul>
             </nav>
             <h3 class="text-muted" style="font-family: 'Rockwell'">It's Time To Duel</h3>
         </div>
 
         {% block content %}{% endblock %}
-        {{ request.url_rule.endpoint }}
         <footer class="footer">
-            <p>&copy; 2016 It's Time To Duel, Inc.</p>
+            <p>&copy; 2016 It's Time To Duel, Inc. | 
+            <a href="/tunes">Sweet Tunes from Sweetify</a>
+            </p>
         </footer>
 
     </div> <!-- /container -->
@@ -60,5 +67,6 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+    <script src="{{ url_for('static', filename='table_sort.js') }}"></script>
 </body>
 </html>

@@ -17,38 +17,66 @@
 </table>
 <br><br>
 <table class="table table-hover" id="sub_table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th># of Cards in Subtype</th>
-        <th>Avg. Price of Subtype</th>
-        <th>Card Type</th>
-    </tr>
+    <thead>
+        <tr>
+            <th data-sort="int">ID</th>
+            <th data-sort="string">Name</th>
+            <th data-sort="string">Type</th>
+            <th data-sort="string">Subtype</th>
+            <th data-sort="string">Family</th>
+        </tr>
+    </thead>
+    <tbody id="sub_table_body">
+
+    </tbody>
 </table>
 
 <script>
+function subTypeTemplate(){
         var result = {{sublist|safe}};
-        var table = document.getElementById("sub_table");
+        var table = document.getElementById("sub_table_body");
         var i = 0;
         for (var item in result) {
             var row = document.createElement("tr");
-            var cardid = document.createElement("td");
-            var cardname = document.createElement("td");
-            var card_in_st = document.createElement("td");
-            var price_of_st = document.createElement("td");
-            var card_type = document.createElement("td");
-            row.appendChild(cardid);
-            row.appendChild(cardname);
-            row.appendChild(card_in_st);
-            row.appendChild(price_of_st);
-            row.appendChild(card_type);
-            table.appendChild(row);
-            cardid.innerHTML = result[i][0];
-            cardname.innerHTML = result[i][2];
-            card_in_st.innerHTML = result[i][3];
-            price_of_st.innerHTML = result[i][4];
-            card_type.innerHTML = result[i][5];
-            i+=1;
+        var cardid = document.createElement("td");
+        var cardname = document.createElement("td");
+        var type1 = document.createElement("td");
+        var subtype = document.createElement("td");
+        var family = document.createElement("td");
+
+        var cardlink= document.createElement("a");
+        var cardlink1= document.createElement("a");
+        var cardlink2= document.createElement("a");
+        var cardlink3= document.createElement("a");
+
+        cardlink.href="/cards/"+result[i][0];
+        cardlink1.href="/typeTemplate/"+result[i][6];
+        cardlink2.href="/subTypeTemplate/"+result[i][1];
+        cardlink3.href="/familyTemplate/"+result[i][3];
+
+        cardname.appendChild(cardlink);
+        type1.appendChild(cardlink1);
+        subtype.appendChild(cardlink2);
+        family.appendChild(cardlink3);
+
+        row.appendChild(cardid);
+        row.appendChild(cardname);
+        row.appendChild(type1);
+        row.appendChild(subtype);
+        row.appendChild(family);
+
+        table.appendChild(row);
+        cardid.innerHTML = result[i][0];
+        cardlink.innerHTML = result[i][4];
+        cardlink1.innerHTML = result[i][6];
+        cardlink2.innerHTML = result[i][7];
+        cardlink3.innerHTML = result[i][8];
+
+        i += 1;
         }
+        $("#sub_table").stupidtable();
+}
+
+window.onload = subTypeTemplate;
 </script>
 {% endblock %}
