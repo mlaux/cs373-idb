@@ -29,6 +29,8 @@ function orSearch(){
 }
 
 function search(isAnd){
+        $("#search_table_body").remove();
+
         var result = {{search_data|safe}};
         var table = document.getElementById("search_table_body");
         var i = 0;
@@ -55,7 +57,9 @@ function search(isAnd){
             family.innerHTML = result[i][8];
             i+=1;
         }
+        $("#search_table").stupidtable();
 }
-window.onload = search(1);
+// Loads "andSearch" on default
+window.onload = andSearch();
 </script>
 {% endblock %}

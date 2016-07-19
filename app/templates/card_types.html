@@ -26,14 +26,21 @@ function populate_cards() {
                 var card_in_t = document.createElement("td");
                 var num_of_st = document.createElement("td");
                 var cardlink= document.createElement("a");
+                var typelink= document.createElement("a");
+
                 cardlink.href="typeTemplate/"+result[i][1];
                 cardname.appendChild(cardlink);
+                typelink.href="typeTemplate/"+result[i][1];
+                cards_in_t.appendChild(cardlink);
+
                 row.appendChild(cardname);
                 row.appendChild(card_in_t);
                 row.appendChild(num_of_st);
                 table.appendChild(row);
+
                 cardlink.innerHTML = (result[i][1]).toUpperCase();
-                card_in_t.innerHTML = result[i][2];
+                //card_in_t.innerHTML = result[i][2];
+                typelink.innerHTML = result[i][2];
                 num_of_st.innerHTML = result[i][4];
             }
             i+=1;
