@@ -41,6 +41,7 @@
 </table>
 
 <script>
+function cardsTemplate(){
         var result = {{result|safe}};
         var table = document.getElementById("card_table_body");
         var i = 0;
@@ -82,5 +83,8 @@
 
         i += 1;
         }
+        $("#card_table").stupidtable();
+}
+window.onload = cardsTemplate;
 </script>
 {% endblock %}

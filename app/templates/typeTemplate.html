@@ -37,6 +37,7 @@
 </table>
 
 <script>
+function typeTemplate(){
         var result = {{tlist|safe}};
         var table = document.getElementById("type_table_body");
         var i = 0;
@@ -78,5 +79,9 @@
 
         i += 1;
         }
+        $("#type_table").stupidtable();
+}
+
+window.onload = typeTemplate;
 </script>
 {% endblock %}

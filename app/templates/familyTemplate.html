@@ -36,6 +36,7 @@
 </table>
 
 <script>
+function familyTemplate(){
         var result = {{flist|safe}};
         var table = document.getElementById("fam_table_body");
         var i = 0;
@@ -77,5 +78,8 @@
 
         i += 1;
         }
+        $("#fam_table").stupidtable();
+}
+window.onload = familyTemplte;
 </script>
 {% endblock %}
