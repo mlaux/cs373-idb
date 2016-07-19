@@ -28,38 +28,37 @@ function populate_cards() {
         var type1 = document.createElement("td");
         var subtype = document.createElement("td");
         var family = document.createElement("td");
-        var cardlink = document.createElement("a");
-        var typelink = document.createElement("a");
-        var subtypelink = document.createElement("a");
-        var familylink = document.createElement("a");
 
-        cardlink.href = "/cards/"+result[i][0];
+        var cardlink= document.createElement("a");
+        var cardlink1= document.createElement("a");
+        var cardlink2= document.createElement("a");
+        var cardlink3= document.createElement("a");
+
+        cardlink.href="/cards/"+result[i][0];
+        cardlink1.href="/typeTemplate/"+result[i][6];
+        cardlink2.href="/subTypeTemplate/"+result[i][1];
+        cardlink3.href="/familyTemplate/"+result[i][3];
+
         cardname.appendChild(cardlink);
-        typelink.href = "/typeTemplate/"+result[i][6];
-        type1.appendChild(typelink);
-        subtypelink.href = "/subTypeTemplate/"+result[i][1];
-        subtype.appendChild(subtypelink);
-        familylink.href = "/familyTemplate/"+result[i][3];
-        family.appendChild(familylink);
+        type1.appendChild(cardlink1);
+        subtype.appendChild(cardlink2);
+        family.appendChild(cardlink3);
 
         row.appendChild(cardid);
         row.appendChild(cardname);
         row.appendChild(type1);
         row.appendChild(subtype);
         row.appendChild(family);
-        table.appendChild(row);
 
+        table.appendChild(row);
         cardid.innerHTML = result[i][0];
         cardlink.innerHTML = result[i][4];
-        typelink.innerHTML = result[i][6];
-        //subtype.innerHTML = result[i][7];
-        subtypelink.innerHTML = result[i][7];
-        //family.innerHTML = result[i][8];
-        familylink.innerHTML = result[i][8];
+        cardlink1.innerHTML = result[i][6];
+        cardlink2.innerHTML = result[i][7];
+        cardlink3.innerHTML = result[i][8];
 
         i += 1;
     }
-
     $("#card_table").stupidtable();
 }
 

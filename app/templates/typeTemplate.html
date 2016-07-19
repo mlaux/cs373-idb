@@ -7,7 +7,7 @@
         <th>Information</th>
     </tr>
     <tr>
-        <td><img src="{{url_for('static', filename='normal_monster.jpg')}}" class="card-image"></td>
+        <td><img src="{{url_for('static', filename='normal_monster.jpg')}}" class="about-image"></td>
         <td>
             <table style="font-family: Rockwell" border="2" width="100%">
                 <tr><th>ID: </th><th>{{type_data[0]}}</th></tr>
@@ -21,58 +21,62 @@
 
 <br><br>
 
-<table width="700" align="center" border="2", id="type_table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Subtype</th>
-        <th>Family</th>
-    </tr>
+<table class="table table-hover" width="700" align="center" id="type_table">
+    <thead>
+        <tr>
+            <th data-sort="int">ID</th>
+            <th data-sort="string">Name</th>
+            <th data-sort="string">Type</th>
+            <th data-sort="string">Subtype</th>
+            <th data-sort="string">Family</th>
+        </tr>
+    </thead>
+    <tbody id="type_table_body">
+
+    </tbody>
 </table>
 
 <script>
         var result = {{tlist|safe}};
-        var table = document.getElementById("type_table");
+        var table = document.getElementById("type_table_body");
         var i = 0;
         for (var item in result) {
-            var row = document.createElement("tr");
-            var cardid = document.createElement("td");
-            var cardname = document.createElement("td");
-            var type1 = document.createElement("td");
-            var subtype = document.createElement("td");
-            var family = document.createElement("td");
-            var cardlink= document.createElement("a");
-            var typelink = document.createElement("a");
-            var subtypelink = document.createElement("a");
-            var familylink = document.createElement("a");
+        var row = document.createElement("tr");
+        var cardid = document.createElement("td");
+        var cardname = document.createElement("td");
+        var type1 = document.createElement("td");
+        var subtype = document.createElement("td");
+        var family = document.createElement("td");
 
-            cardlink.href="/cards/"+result[i][0];
-            cardname.appendChild(cardlink);
-            typelink.href = "/typeTemplate/"+result[i][6];
-            type1.appendChild(typelink);
-            subtypelink.href = "/subTypeTemplate/"+result[i][1];
-            subtype.appendChild(subtypelink);
-            familylink.href = "/familyTemplate/"+result[i][3];
-            family.appendChild(familylink);
+        var cardlink= document.createElement("a");
+        var cardlink1= document.createElement("a");
+        var cardlink2= document.createElement("a");
+        var cardlink3= document.createElement("a");
 
-            row.appendChild(cardid);
-            row.appendChild(cardname);
-            row.appendChild(type1);
-            row.appendChild(subtype);
-            row.appendChild(family);
-            table.appendChild(row);
+        cardlink.href="/cards/"+result[i][0];
+        cardlink1.href="/typeTemplate/"+result[i][6];
+        cardlink2.href="/subTypeTemplate/"+result[i][1];
+        cardlink3.href="/familyTemplate/"+result[i][3];
 
-            cardid.innerHTML = result[i][0];
-            cardlink.innerHTML = result[i][4];
-            //type1.innerHTML = result[i][6];
-            typelink.innerHTML = result[i][6];
-            //subtype.innerHTML = result[i][7];
-            subtypelink.innerHTML = result[i][7];
-            //family.innerHTML = result[i][8];
-            familylink.innerHTML = result[i][8];
+        cardname.appendChild(cardlink);
+        type1.appendChild(cardlink1);
+        subtype.appendChild(cardlink2);
+        family.appendChild(cardlink3);
 
-            i+=1;
+        row.appendChild(cardid);
+        row.appendChild(cardname);
+        row.appendChild(type1);
+        row.appendChild(subtype);
+        row.appendChild(family);
+
+        table.appendChild(row);
+        cardid.innerHTML = result[i][0];
+        cardlink.innerHTML = result[i][4];
+        cardlink1.innerHTML = result[i][6];
+        cardlink2.innerHTML = result[i][7];
+        cardlink3.innerHTML = result[i][8];
+
+        i += 1;
         }
 </script>
 {% endblock %}

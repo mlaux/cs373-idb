@@ -28,27 +28,27 @@ function populate_cards() {
             var card_in_st = document.createElement("td");
             var price_of_st = document.createElement("td");
             var card_type = document.createElement("td");
-            var cardlink = document.createElement("a");
-            var typelink = document.createElement("a");
+            var cardlink= document.createElement("a");
+            var cardlink1= document.createElement("a");
 
             cardlink.href="subTypeTemplate/"+result[i][0];
+            cardlink1.href="typeTemplate/"+result[i][5];
+
+            card_type.appendChild(cardlink1);
             cardname.appendChild(cardlink);
-            typelink.href="typeTemplate/"+result[i][5];
-            card_type.appendChild(typelink);
 
             row.appendChild(cardid);
             row.appendChild(cardname);
             row.appendChild(card_in_st);
             row.appendChild(price_of_st);
             row.appendChild(card_type);
+
             table.appendChild(row);
             cardid.innerHTML = result[i][0];
             cardlink.innerHTML = result[i][2];
             card_in_st.innerHTML = result[i][3];
             price_of_st.innerHTML = result[i][4];
-            //card_type.innerHTML = result[i][5];
-            typelink.innerHTML = result[i][5];
-            
+            cardlink1.innerHTML = result[i][5];
             i+=1;
         }
         $("#subtype_table").stupidtable();
