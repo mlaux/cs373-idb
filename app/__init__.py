@@ -54,11 +54,12 @@ mylist=[[1, 'light', 0, 0, 0.0, 0.0], [2, 'dark', 0, 0, 0.0, 0.0], [3, '', 0, 0,
 
 #get type from database
 types = conn.execute(select([my_type]))
-tlist=[[1, 'monster', 0, '', 0], [2, 'monster', 742, '', 0], [3, 'spell', 188, '', 0], [4, 'monster', 0, '', 0], [5, 'spell', 0, '', 0], [6, 'monster', 0, '', 0], [7, 'spell', 0, '', 0], [8, 'trap', 150, '', 0]]
+tlist=[[1, 'monster', 0, '', 0], [2, 'monster', 742, '', 121], [3, 'spell', 188, '', 9], [4, 'monster', 0, '', 0], [5, 'spell', 0, '', 0], [6, 'monster', 0, '', 0], [7, 'spell', 0, '', 0], [8, 'trap', 150, '', 2]]
 
 #get subtype from database
 subtype = conn.execute(select([my_subtype]))
 sublist=[]
+num_cards = [9,35,9,30,87,9,35,9,30,87,9,35,9,30,87,52,51,1,149,44,4,33,12,1,9,3,50,3,13,26,1,6,30,17,4,5,18,9,2,2,4,23,1,2,3,10,4,24,1,21,2,35,3,4,3,3,1,22,3,6,23,2,6,1,6,14,1,6,1,3,6,4,2,7,2,2,1,1,1,3,2,3,6,2,1,1,1,4,1,1,1,3,1,1,15,1,5,3,1,1,1,1,1,1,1,2,1,1,1,2,1,1,3,1,1,2,1,1,1,2,2,3,2,3,1,1,1,1,1,1,1,1]
 for row in subtype:
     row=list(row)
     n=0
@@ -67,6 +68,9 @@ for row in subtype:
         if i == None:
             row[n - 1] = ""
     sublist.append(row)
+    
+for i in range(0, len(num_cards)):
+    sublist[i][3] = num_cards[i]
 
 @app.route("/")
 def home_page():

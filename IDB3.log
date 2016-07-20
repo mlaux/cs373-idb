@@ -1,0 +1,1154 @@
+commit 0f4626f9b3ffda320a42166afa60369147f3c8fa
+Merge: a9c9f63 2f1219f
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 19:37:35 2016 -0500
+
+    Merge branch 'dev' of https://github.com/mlaux/cs373-idb into dev
+
+commit a9c9f639d3e6a6289de8db29b19fb0f877bfc2ea
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 19:37:14 2016 -0500
+
+    not linking subtypes
+
+commit 2f1219f308aff87725374a59408208053b6faace
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 19 19:37:08 2016 -0500
+
+    Added number of cards to subtypes
+
+commit 812148fb95f28cfe05490091c3b927679dea071a
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 19:29:36 2016 -0500
+
+    added links for card type subtypes
+
+commit d6bc6afbdaaa84d45a47e6e4322663e1112d0e2c
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 19 19:13:38 2016 -0500
+
+    Updating commits.
+
+commit 75cc462966c4ce86e29ef9dae2631258b10dc1d8
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 19 19:09:56 2016 -0500
+
+    Added link to Speaker Deck.
+
+commit 7e9493f30e11940d08aefae98696347882195b49
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 19 18:20:53 2016 -0500
+
+    Added number of subTypes to Types template
+
+commit c1de40badeef42b8c5bb2148995111eb38ba1a70
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 18:11:04 2016 -0500
+
+    updated commits on about
+
+commit bdeceecd0e54b5cf34dcae2f7e73cc5c15489a77
+Merge: c730d68 a74f5a0
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 19 17:49:23 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit c730d688a57a8ecaaae7fe205be0fe7395780632
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 19 17:47:52 2016 -0500
+
+    hardcode issues instead of scraping github :(
+
+commit a74f5a0074af72cf6c0e048167b995cb2b429b93
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 19 17:45:42 2016 -0500
+
+    Updating about page.
+
+commit fc497136d0a5d398d563475d5f5aed5af72f5f15
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 19 17:41:55 2016 -0500
+
+    Changed title in type template
+
+commit 5aad3d7442dc6a149d3eccd6451c6806da84ac07
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 19 17:29:29 2016 -0500
+
+    Added number of cards to families
+
+commit 56881cf28c3e499f9c96e3c7553e33b150ace30d
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 17:18:02 2016 -0500
+
+    fixing familyTemplate
+
+commit 918b136c707a7e538d55fa0681ce2e7e2a2d6e46
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 16:59:54 2016 -0500
+
+    added sorting to all template pages
+
+commit ab20cbd3d70a0588a66c1eeb1b64cc6c06aa5e52
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 16:49:56 2016 -0500
+
+    properly clearing search results when choosing and/or; working sort
+
+commit 865382bfa3ab40f842bcd3bfd6572992d6250126
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 16:34:38 2016 -0500
+
+    linking the search page, fixing search sort
+
+commit c06a16231a6fb2334e9c0404add28da9c5b9de12
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 16:21:31 2016 -0500
+
+    fixing and/or button just adding the rows; adding table_sort to search
+
+commit f8c732bef34917a641e1d96c0b936f6fbe284761
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 19 16:13:29 2016 -0500
+
+    app.models
+
+commit 3a9fb0f8025635524c01a97cf41781ff4c1ef5f3
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 19 16:12:33 2016 -0500
+
+    clicking on family and subtype now show all card with that family name or subtype name (not done by id anymore)
+
+commit 79764003007bfdafcd7c23e15c3be118e841a2da
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 19 15:59:14 2016 -0500
+
+    adding and/or buttons and calling their functions to search
+
+commit e7242da3e89fc734050a396220d05f9bdb9a6c21
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 19 15:30:52 2016 -0500
+
+    Updating about page.
+
+commit d8f85c5d64c066cbced195b7b978c3f2dee2f0dc
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 19 14:47:16 2016 -0500
+
+    card info table design and N/A if no info
+
+commit 92b2aab39c235ea74e2a742679450c076ae15d8f
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 19 13:52:21 2016 -0500
+
+    card images are not round and app.models
+
+commit 82d26897bc44e8ecdea60d6c3292923f0db19a4c
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 19 13:45:29 2016 -0500
+
+    everything links to everything
+
+commit c5ddf36e82748689691d37d3cfa2d2a641d7a409
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 19 12:52:26 2016 -0500
+
+    Updating __init__.py's search function.
+
+commit 3131f154a7b175d8788681f645a3a4f13067eaff
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Mon Jul 18 18:13:17 2016 -0500
+
+    Added number of cards to types
+
+commit f3a0820669949f506ff419600ab8839d4bea3680
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Mon Jul 18 17:14:04 2016 -0500
+
+    updating kevin bio
+
+commit 3e09aef76663e5773565e0b8da825b3b73e70934
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 18 16:37:51 2016 -0500
+
+    app.models
+
+commit d84146f0c2ed733d45dd16310dab60f38ed66368
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 18 16:35:36 2016 -0500
+
+    indentetion fixed
+
+commit c78f82cc93869dc1dc18e8bca2b00710517c9f74
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 18 16:30:44 2016 -0500
+
+    search doesnt break with ' character and morphing jar page shows up
+
+commit 093a7ee3e5db57dec31f6f57b4fd1fc09730ebd6
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 18 15:53:19 2016 -0500
+
+    you can now search multiple word with space between them
+
+commit c52e91debfe3f96218d293b80f50acc81c13f21c
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 18 15:31:22 2016 -0500
+
+    app.models
+
+commit 71c7504584b6217d9832e23782e6294f3ce2bf5b
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 18 15:30:11 2016 -0500
+
+    added sort function-> cards now redirect to correct pages
+
+commit a55bf4aaab27a3e645c86916a18ea9a14a6c4859
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Mon Jul 18 12:57:21 2016 -0500
+
+    added links to cards template page
+
+commit 5b5cd52e47b8851f7ec81fdfd3828f71fa630629
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Mon Jul 18 12:34:50 2016 -0500
+
+    added links to subtype template page
+
+commit 20e7abdf4f55d744f29b490354e93e85eff5172c
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 17 18:23:22 2016 -0500
+
+    fixed oval images for family and type templates
+
+commit 9d9f4a808fcf046a6d71f82a270611ac54ab107c
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 17 18:19:58 2016 -0500
+
+    changed card images to not be oval
+
+commit 5477779df601cac05d2158fe4c0a4814bbb1ee02
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Sun Jul 17 18:16:31 2016 -0500
+
+    app.models
+
+commit ca02ccbcbe4cd1de8f41759f0d555c8fa7788ff4
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Sun Jul 17 18:14:56 2016 -0500
+
+    search for cards table
+
+commit 5ffdca21d804acf7dd593ef433debc6a5c0c8bec
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 17 18:09:24 2016 -0500
+
+    added links for typetemplate page
+
+commit e4c4958eeea6f69c6215d2183356d92f8b5ece28
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 17 18:02:37 2016 -0500
+
+    added links for familytemplate page
+
+commit dd1896887780be1e2c0c72421438235ce64e37df
+Merge: d4e3abc 393591d
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:45:54 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit d4e3abce4c9ba7a38629b5937cff6c34d4977e23
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:45:45 2016 -0500
+
+    remove errant <strong> tag
+
+commit 393591d320773481795faa10238b4881045d6645
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 17 17:44:59 2016 -0500
+
+    added links to subtypes page; fixed family link for cards page
+
+commit c923e973678da6afc02cf63c5c697ce99c5359f3
+Merge: e29bdc5 8909344
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:40:55 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit e29bdc5805f5d1efa045698d91aedf07f0f5e1a7
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:40:47 2016 -0500
+
+    about
+
+commit 8909344377290f2ee4657f1f4e55b1e48f154db5
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 17 17:34:24 2016 -0500
+
+    adding family links from cards page, fixing type&subtype links
+
+commit e09520e07ef74f89c77ff2ed5fcee05b6755e507
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:32:51 2016 -0500
+
+    make about page a lil nicer
+
+commit 9743ceec04ba1123e71f9e8327896b52a26f6f04
+Merge: 12985c8 d69a2cd
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:24:40 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit 12985c8673877c959d4dd7c6b80cfea6c81f3bf1
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:24:30 2016 -0500
+
+    fix CSS fail
+
+commit d69a2cdd40f82c20af5703e56551814f8928d2c8
+Merge: 9b6a949 0230e61
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 17 17:23:57 2016 -0500
+
+    Merge branch 'dev' of https://github.com/mlaux/cs373-idb into dev
+
+commit 9b6a949d6da0441df5a9146c88139d9a51442835
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 17 17:23:35 2016 -0500
+
+    working type link for cards page, adding subtype link
+
+commit 0230e61c14c9462bec1a72d46db3ecbb28b555ff
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Sun Jul 17 17:23:24 2016 -0500
+
+    Splitting unit tests.
+
+commit 8abf16b19ca2d9cd257433daaeb3ff4b77816f06
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:20:36 2016 -0500
+
+    round about images attempt
+
+commit e6af3f3321117e302b8904a3eadf223187c18657
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:06:47 2016 -0500
+
+    fix off-by-one when computing pie chart size
+
+commit d30071819366bf6ead8ccefcb8f7a3bc13f92411
+Merge: e6d9d1c 2b80c60
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:02:15 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit e6d9d1c3fc5d36064345605156a6bafaeba0fc40
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 17:02:08 2016 -0500
+
+    use correct axis
+
+commit 2b80c608bdf97b725b2b4775ab66ec0e710f1c5b
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Sun Jul 17 16:55:06 2016 -0500
+
+    Updating test button display.
+
+commit 54c98de5d2d8f09262c72a1b86026696fe921fa5
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 16:53:39 2016 -0500
+
+    use better colors
+
+commit de864227722df0f2cef1e3718dd59b10d1d3f948
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 16:48:49 2016 -0500
+
+    use hasOwnProperty, fix bug with .data
+
+commit 4c6c0f8b59613ac221e7357a71903f35baa38a38
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 16:43:15 2016 -0500
+
+    i think it's done
+
+commit a6422586fd04ac8d3cb00b14f3546aa54d0ea2ce
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 16:31:34 2016 -0500
+
+    use actual genre data
+
+commit 682fe31a1e118b549064a0c6fe73864ec869164d
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 16:29:56 2016 -0500
+
+    use d3v3
+
+commit 7a5707736a00a17f11e4ce158d0cf3286b738739
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 16:28:39 2016 -0500
+
+    add graph code
+
+commit 721a28ba3fd09797c554b4fd1c1c41671bab6451
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 16:15:09 2016 -0500
+
+    .
+
+commit bd1bd396b72fa7b90f5a4091d5d2d9550c89464d
+Merge: c1ca7f8 456d373
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 16:13:38 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit c1ca7f819211fcd7699e6c2f09920ee168f2bbd7
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 17 16:13:26 2016 -0500
+
+    start on music visualization
+
+commit 456d373a8d5538b2ca5eaf41aabcb09237c66baf
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 17 15:58:57 2016 -0500
+
+    adding link to card types on cards page
+
+commit e0b384c55860ea8cc2eb80a42a231c5c681f1566
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Sun Jul 17 15:22:25 2016 -0500
+
+    added sort to cardtype, subtype, family
+
+commit 66fb22d2d42076552bf9308867b7fb84c51b5d03
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Sun Jul 17 14:26:43 2016 -0500
+
+    Testing unit test button fix.
+
+commit 54b8cd75c05f906e4436a2c5d33aa41648a8ba25
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Sun Jul 17 14:21:14 2016 -0500
+
+    Testing unit test button.
+
+commit 7d9e54391bb375c7a8991a794edf26622cd6fc54
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 16 20:59:21 2016 -0500
+
+    run the JS at the right time
+
+commit 31938b3fc8e1c2e0947cadf1536a17747efba54e
+Merge: be25bd8 1d10317
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 16 20:55:59 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit be25bd88815ad73219ce01a2f127c376852a889b
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 16 20:55:50 2016 -0500
+
+    first stab at table sort
+
+commit 1d103172d6693ede8a7e36c4a5162f9581f17f06
+Author: Matthew Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 16 21:54:37 2016 -0400
+
+    how does this keep breaking?
+
+commit 5eca1730c9d77719a4adf0e7463a873cbebb94f8
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Sat Jul 16 16:42:54 2016 -0500
+
+    list of related cards with links, when you click on a type, family or subtype
+
+commit 90b618edd4c6e254a068103d149967cb6a9d94ae
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Sat Jul 16 16:11:29 2016 -0500
+
+    Updating about page a bit.
+
+commit 2d354346592dec6dae9acaaefc171eaef95761e3
+Merge: 0f88304 daa6ebc
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sat Jul 16 15:47:24 2016 -0500
+
+    Merge branch 'dev' of https://github.com/mlaux/cs373-idb into dev
+
+commit 0f883048e3c227f386e2c88011c8f121696705fb
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sat Jul 16 15:46:57 2016 -0500
+
+    added search.py, non-functional search bar on site template
+
+commit daa6ebcee6274f253823d9e7c4c7b59321117c18
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Sat Jul 16 14:35:12 2016 -0500
+
+    Fixing unit test button.
+
+commit 6f5bb65dd8b46375f33833e30a09d4a445b4fc2b
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 12 21:53:51 2016 -0500
+
+    added log
+
+commit 67e00c2e2112dd92301fd9f47da2be79d0b39f76
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 12 21:43:44 2016 -0500
+
+    Added virtualenv install
+
+commit bd27dbd250795c537bc4fa3b333259dfc002bb37
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 12 21:42:56 2016 -0500
+
+    updating makefile
+
+commit 8be7eeb6fc79738158a4724ba5abcc9cb12d33fd
+Author: Matthew Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 12 22:39:28 2016 -0400
+
+    api is working now 8)
+
+commit 6fe8ff2b50afb3ae01701df6b79a006b845e20ec
+Author: Matthew Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 12 22:36:50 2016 -0400
+
+    somehow it broke again?
+
+commit 1bb12c2565d2cc5e9c17868cad5977896094ddaf
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 12 21:34:34 2016 -0500
+
+    add api
+
+commit f3469cf327c9cbdcee14f0864c9bc1d3c81811e2
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 12 21:27:12 2016 -0500
+
+    Added installs to travis.yml
+
+commit 185c005c0a26320bad8a738caa2da259b93a10bf
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 12 21:18:02 2016 -0500
+
+    Added .travis.yml
+
+commit 5d5a01b84bf474c9327f01afd348c755a666e2dc
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 12 21:11:13 2016 -0500
+
+    dynamic pages for subtypes, families, cards, etc
+
+commit 600caa5d9c7bf09e2c7002eaaf90f41bde157f75
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 12 19:58:54 2016 -0500
+
+    cards work
+
+commit 980c96f4f1104bdba69aa38d876d81cfdd15bbdd
+Author: Matthew Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 12 19:50:37 2016 -0400
+
+    make app use python3
+
+commit fd4531fb518bd5f0d362a594a271331cca888b13
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 12 18:29:51 2016 -0500
+
+    Fixed tests.
+
+commit c775d1212e78dd49c26cf36503c3faaaa44271cb
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 12 18:07:04 2016 -0500
+
+    shows all cards and families and links to templates
+
+commit 07e7db49ed7a3f4f7f96d6ec06cb1c378ccf952c
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Tue Jul 12 17:47:03 2016 -0500
+
+    updated braden's bio
+
+commit 380ac3b907c21bf184a0f5536aa6cd9aa30c4c7b
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 12 16:22:10 2016 -0500
+
+    Updating about page bio.
+
+commit cc66df8ca2d663f98fb03cf95314c8e9f34bd766
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 12 14:30:27 2016 -0500
+
+    Fixed the run_tests button for about page.
+
+commit 23674114428c4c2f505b91acb702b46efa329559
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 12 14:26:02 2016 -0500
+
+    Updating models and about files.
+
+commit 87337155caec2b0816d713a72e1c3a7260623ec8
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 12 13:42:54 2016 -0500
+
+    Updating about page.
+
+commit e00b822fb9eebc94078efb2704fe2beef88abfe1
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 12 13:25:15 2016 -0500
+
+    Added my bio to about page
+
+commit f03b4b280a15debe8c30ee6c06018b7a77accc69
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 12 12:57:18 2016 -0500
+
+    Tidying up about page.
+
+commit 94323c8465b8ad3e44d97d9053d50909e1006966
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 12 12:50:01 2016 -0500
+
+    Adding some data scraping information for about page.
+
+commit 1a96cbb407029a7caae44343f134da148d68a43a
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 12 12:16:26 2016 -0500
+
+    Adding biography to about page.
+
+commit 47a8556c1a61a39a93c09fd35caa0e8bc2f684ec
+Author: Kevin Ong <kpong@utexas.edu>
+Date:   Mon Jul 11 17:09:21 2016 -0700
+
+    Fixed typo
+
+commit ec117fa58e5ce72c0e355289301799e0237eb064
+Author: Kevin Ong <kpong@utexas.edu>
+Date:   Mon Jul 11 17:00:02 2016 -0700
+
+    Fixed commits for jeffcount
+
+commit 37eb25481b5ab1f385c7c4586d00ab5f2310e65c
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 11 16:23:50 2016 -0500
+
+    added templates for each model and images of families
+
+commit df3bc3e7db48ba674b028cce09eedc2d9b291373
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 10 17:32:39 2016 -0500
+
+    fixed issue off by 1 and hardcoded # of commits
+
+commit 0e44f1fad9303c4dfb6c7eea1ae56aa6f060fcc4
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 10 17:21:04 2016 -0500
+
+    added issue numbers for everyone
+
+commit abd2aafade9c0de98c72cd5818798b3956d85b37
+Merge: cac2780 4d8d369
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 10 17:05:49 2016 -0500
+
+    Merge branch 'dev' of https://github.com/mlaux/cs373-idb into dev
+
+commit cac27804bb24ff90814e66b8c18723e194d86450
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 10 17:03:56 2016 -0500
+
+    adding number of issues to about page
+
+commit 4d8d36916e09351ec750ed858677b66be51c7a61
+Merge: e8227ed 98ecc52
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 10 17:01:07 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit e8227ed9b387c87ed5c8ee3bd76093bab8ad93a6
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 10 17:00:41 2016 -0500
+
+    add 1k images, move models to app/models, finish scraper
+
+commit 98ecc525fbdb13b4329265e1238a7ef44b0877a7
+Author: Staging Server <staging@itstimetoduel.me>
+Date:   Sun Jul 10 16:52:45 2016 -0400
+
+    added # of commits for everyone via git api
+
+commit 4396abd3affa23f5bc593bf4e10763c9c05d5d2e
+Author: bstotmeister <bstotmei@cs.utexas.edu>
+Date:   Sun Jul 10 15:14:31 2016 -0500
+
+    added github api for matt commits
+
+commit d0db6ce29706ecd3cae913374c026278fb493292
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Sun Jul 10 14:53:06 2016 -0500
+
+    updated models.py
+
+commit 670cb5915d96732eeb1b5cc711bed1c70b7c3748
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 9 20:11:11 2016 -0500
+
+    scraper is basically done
+
+commit a7df33e7e444093d5fdf980a19256f1015528d8e
+Merge: d9189dc ef44cd3
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 9 20:09:45 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit d9189dc1f14f2411535230dee2fe6ad4baf9bcac
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 9 20:09:37 2016 -0500
+
+    add scraper
+
+commit ef44cd3aac2f54cb2231ab3953eef39c16f0b68b
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Sat Jul 9 14:29:56 2016 -0500
+
+    Fixing links on about page.
+
+commit 6ddfe8c061941842dce9c7ed849c37f5a9368629
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 19:02:53 2016 -0500
+
+    update the log
+
+commit 642c2f9655c4ae39c65e74c7255930d88118fb91
+Merge: 8e4240f eb3b24e
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 19:00:50 2016 -0500
+
+    Merge branch 'master' of github.com:mlaux/cs373-idb
+
+commit 8e4240f7f6077302c0758f3a5d4e2f4358ff632b
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 18:59:43 2016 -0500
+
+    fix makefile, add models.html
+
+commit eb3b24ecf8c385b65a6f87a0868e24cbdda8a37f
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 5 18:51:13 2016 -0500
+
+    fixed models
+
+commit cfbb6a7fb5fabcdd8cd868aa6480c7679e5bbef9
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 18:28:26 2016 -0500
+
+    add the log
+
+commit 9602063dd3f8f03e45c3b6a8824be8bdaf7cf9d5
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 5 18:03:48 2016 -0500
+
+    removed an import statement in models.py
+
+commit c1a1d165c32052e8196d61d3618d0451674542a4
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 5 18:02:27 2016 -0500
+
+    adding makefile and deleting travis.yml
+
+commit e71e3a49b38c3b1802edfa7e81816aacf471c38d
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 5 17:37:46 2016 -0500
+
+    Added info to about page
+
+commit bb0810e9d086a8ac47a296ddb4e1e338e46dc3ab
+Merge: 5a51680 0678570
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 17:33:32 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit 5a51680e8722f5a9fe1e3c56e75f9531f54ddbda
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 17:33:21 2016 -0500
+
+    add project stats to about page
+
+commit 067857049598bf6ccda37abf80965ccb594fd69e
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Tue Jul 5 17:30:04 2016 -0500
+
+    Adding image of UML diagram.
+
+commit 56e95e1aa8842edf7a9d83a305d194b31579f3ea
+Merge: 620cb53 cbf7852
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 17:26:12 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit 620cb53b8d4bd1b5d061cb9244e6ff8a953e3671
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 17:26:00 2016 -0500
+
+    add matt about.html info
+
+commit cbf78528c1bbf99b5a221723baf63aa00ea44e92
+Author: bstotmeister <braden.stotmeister@gmail.com>
+Date:   Tue Jul 5 17:23:00 2016 -0500
+
+    moved models.py and tests.py to apps
+
+commit 538588fe9c914301ff04f5c0ca8c0acaded21193
+Merge: ce85e99 fe5f62a
+Author: bstotmeister <braden.stotmeister@gmail.com>
+Date:   Tue Jul 5 17:22:15 2016 -0500
+
+    Merge branch 'dev' of https://github.com/mlaux/cs373-idb into dev
+
+commit fe5f62a11a8e09df42a79f115ab7dcd99f56972a
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 5 17:21:27 2016 -0500
+
+    Renamed UML PDF
+
+commit ce85e995cd5ecf5f5b5dc31fdc3374c719b22598
+Merge: 88b66eb d2e0eee
+Author: bstotmeister <braden.stotmeister@gmail.com>
+Date:   Tue Jul 5 17:21:24 2016 -0500
+
+    Merge branch 'dev' of https://github.com/mlaux/cs373-idb into dev
+
+commit d2e0eee52dd2412c6564d37282b35b3339509a56
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Tue Jul 5 17:17:11 2016 -0500
+
+    Added UML PDF
+
+commit 4dcde8e4aa0dfcee46449e53a10db399b9fc42c2
+Merge: 0a2c741 99e095f
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 17:03:37 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit 0a2c741e2450eea33950e92a2513733334b461dc
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Tue Jul 5 17:03:29 2016 -0500
+
+    revert image dimensions
+
+commit 99e095fa44d80dcdfd63c57ef5ea6515716198ae
+Merge: 91c95a0 56caacb
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 5 17:02:34 2016 -0500
+
+    kevin's commit
+
+commit 91c95a0b3876370e6b5eeb8cf5b33f3f31abe75f
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 5 16:59:24 2016 -0500
+
+    committing
+
+commit 88b66ebffaa0630aa9d819cdf1d266d6d73a095e
+Author: bstotmeister <braden.stotmeister@gmail.com>
+Date:   Tue Jul 5 16:54:16 2016 -0500
+
+    Updated Carousel.
+
+commit 56caacbe8d0555dd2cff92b0e3a629523ed32eef
+Author: bstotmeister <braden.stotmeister@gmail.com>
+Date:   Tue Jul 5 16:51:50 2016 -0500
+
+    Fixed carousel.
+
+commit 2539eab3c13514bef5eeadbfe20297df75d309f1
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Tue Jul 5 16:41:06 2016 -0500
+
+    added many things to the site
+
+commit db74f3996d789ca93f5bb7217fde4da5c3f38256
+Author: bstotmeister <braden.stotmeister@gmail.com>
+Date:   Tue Jul 5 11:07:49 2016 -0500
+
+    fixed sideways picture
+
+commit d4698d85ffcf35422f69ba4906b3fe39b3e51fa1
+Author: Braden Stotmeister <bradenstotmeister@wireless-10-147-103-137.public.utexas.edu>
+Date:   Tue Jul 5 10:21:51 2016 -0500
+
+    updated picture & spelling on card_type page
+
+commit a130ff8f4189909e55099e646a4397f43c01c6cb
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Mon Jul 4 19:05:59 2016 -0500
+
+    .
+
+commit b9fbf7355b8ac14c5464fb1d718e27778c90cc17
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Mon Jul 4 19:03:45 2016 -0500
+
+    fix sizing of carousel
+
+commit 29ea2b76535be8ee4c935a8fa5a3b6612e159745
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Mon Jul 4 18:59:01 2016 -0500
+
+    testing
+
+commit fe69c7f5e1772e241b626453885a44e4661a6ebb
+Merge: 8f64f31 b16ab1f
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Mon Jul 4 18:53:18 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit 8f64f317676489a35d28b5342f5cbae1131ed664
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Mon Jul 4 18:53:04 2016 -0500
+
+    add some cool images to the home page
+
+commit b16ab1f592968fb2286b517f31b33e140c0c07a6
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 4 17:12:32 2016 -0500
+
+    added info for cards, family, type, subtype
+
+commit 9d518fb2f13a27c84bef8d7f65cf2f7ba4afb969
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Mon Jul 4 16:36:50 2016 -0500
+
+    Updating about.html
+
+commit b60e0bd492cf2297e5d1a67df842690e2caba571
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Mon Jul 4 16:29:49 2016 -0500
+
+    Updating about.html.
+
+commit 5b5af2ef69da5fd665a3fd4829e00f8cc75fbbe0
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 4 16:25:55 2016 -0500
+
+    added more cards in cards.html
+
+commit a9492313d68726b0ee8ce2757854faf0adb1347a
+Author: Jeff Taube <jeffrey.taube@utexas.edu>
+Date:   Mon Jul 4 16:19:42 2016 -0500
+
+    Adding home background image.
+
+commit c2f6de60d59cf0be30bd7dc3c7189e2019328cd2
+Author: Matt Laux <mlaux@atlassian.com>
+Date:   Mon Jul 4 16:13:09 2016 -0500
+
+    fix css weirdness
+
+commit 81cec9a4cb4f06e70e5b33fdebfab1c5fd6427b8
+Author: Matt Laux <mlaux@atlassian.com>
+Date:   Mon Jul 4 16:09:01 2016 -0500
+
+    add updated pix
+
+commit e570779100889af8c60229c58ba5428847f127f6
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Mon Jul 4 15:44:17 2016 -0500
+
+    changes to models.py and added tests.py
+
+commit 459a3d22efd56618674aa9273db679ce60de2673
+Merge: 61ee67b d55b4db
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Sun Jul 3 17:55:07 2016 -0500
+
+    made changes to models.py
+
+commit 61ee67b709b3c33a6020820d11d58257d6fd20c9
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Sun Jul 3 17:52:15 2016 -0500
+
+    updated models.py
+
+commit d55b4dbc4d455ffd617ceb9d24f3f145fbf7eda4
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Sun Jul 3 17:35:18 2016 -0500
+
+    Added requirements to About
+
+commit 2fa55b80c947227739adcaec1055f1663ea332e3
+Merge: d108c88 89b0564
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 3 17:31:38 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit d108c883b61e574007376a9c0c5bfef3c02730a4
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 3 17:31:32 2016 -0500
+
+    add basic tables
+
+commit 89b0564dda93762fe2ba593e12e2c36aaa5a504b
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Sun Jul 3 17:19:41 2016 -0500
+
+    Attempt to fix CSS
+
+commit 71d54734214ec71510d3f6377bfd8cdd5f455567
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 3 17:15:31 2016 -0500
+
+    make images lowercase so they work on linux
+
+commit b8cc1a60391ccd19ced3f76e1cbc938451b470d6
+Merge: e3ce424 2b90405
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 3 17:13:09 2016 -0500
+
+    Merge branch 'dev' of github.com:mlaux/cs373-idb into dev
+
+commit e3ce424672cac0c41429e8ab0d1b0563f3617dda
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 3 17:12:55 2016 -0500
+
+    add API spec, add required files
+
+commit 2b904052d30cc08c887a99ae5d867e57bc749c26
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Sun Jul 3 17:10:38 2016 -0500
+
+    Fixed image CSS
+
+commit c4dd28d0effe4519a6ded78dc838fa7b77af7866
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Sun Jul 3 17:08:19 2016 -0500
+
+    Placeholders for images
+
+commit 16dfa1d3ef8c24fa63260347ec7370388576627e
+Merge: bcca1a0 10cf3d7
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Sun Jul 3 16:55:14 2016 -0500
+
+    Merge branch 'dev' of https://github.com/mlaux/cs373-idb into dev
+
+commit bcca1a01e67436d9daf29405a04b872a721d43c7
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Sun Jul 3 16:54:54 2016 -0500
+
+    Forced image size
+
+commit 10cf3d770b67402b3dfe4ef28deb02163e33eb68
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 3 16:51:19 2016 -0500
+
+    woops
+
+commit 72aa9b67ed4240a1683ff745c9935d76eb57be4e
+Merge: 5d9300a 0d7d531
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Sun Jul 3 16:49:00 2016 -0500
+
+    Merge branch 'dev' of https://github.com/mlaux/cs373-idb into dev
+
+commit 5d9300aa5344e28b48d04bdf93a2d3c2123b50c7
+Author: ChidiOmen <ochidimon@utexas.edu>
+Date:   Sun Jul 3 16:48:21 2016 -0500
+
+    Added some pictures to about page
+
+commit 0d7d531f6d29b41aec975e0f76f43a4175ad2d05
+Merge: d1af5e2 3134d00
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sun Jul 3 16:47:29 2016 -0500
+
+    Merge branch 'master' into dev
+
+commit 3134d00c342a780ec9742cb93adaca2be57cffdd
+Author: Asad Valliani <asadv988@gmail.com>
+Date:   Sat Jul 2 17:00:52 2016 -0500
+
+    Adding models.py
+
+commit d1af5e2c112da922be8e62be1bd3f45f2aeeb674
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 16:31:33 2016 -0500
+
+    make nav link change when clicked
+
+commit f6f32e7fdeb713cd4ba2cf69d8b7041a1aae2540
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 16:26:36 2016 -0500
+
+    .
+
+commit 00763b7e6e1a93e431538c90e95430a74d9e1fc2
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 16:25:23 2016 -0500
+
+    testing something...
+
+commit 190bafbe5e0a649406b14b29d3bb0b41f3d9adbd
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 16:18:38 2016 -0500
+
+    add other pages to nav, create blank html files for them
+
+commit 5879ad0d04dc215ddbfb5fb78e5b2a1d5f140c25
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 16:28:09 2016 -0400
+
+    fix misspelled url
+
+commit 76cac1df4321bb9f6cda1eda40dab83422d75c19
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 16:27:03 2016 -0400
+
+    add missing bootstrap stylesheet
+
+commit 12c4f33c7a2f612720b7662e44de91248a7aa83f
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 16:24:32 2016 -0400
+
+    fix template syntax error
+
+commit dfc3df2834a7e9c7e51f69c944d073815bec367c
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 15:18:52 2016 -0500
+
+    add basic bootstrap template... no idea if this will work
+
+commit d1ebedc620d29a0b9a937ceb1d5ab57c02f68266
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 16:02:37 2016 -0400
+
+    start on templates
+
+commit 6fdc1c70884110bdb6902e2f3004ad47830775d4
+Author: Matt Laux <matthew.laux@gmail.com>
+Date:   Sat Jul 2 15:41:22 2016 -0400
+
+    added python, flask, apache config, test page
+
+commit 822a0f035d16f80b143b494d2e378b7ed6382b9d
+Author: Matt Laux <mlaux@users.noreply.github.com>
+Date:   Wed Jun 29 14:40:42 2016 -0500
+
+    Initial commit

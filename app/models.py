@@ -18,72 +18,81 @@ PASSWORD = 'yugioh'
 DB_NAME = 'its-time-to-duel'
 
 #engine = create_engine('sqlite:///:memory:', echo=True)
-engine = create_engine("postgresql://%s:%s@%s/%s" % (USERNAME, PASSWORD, STAGING_HOST, DB_NAME))
+engine = create_engine("postgresql://%s:%s@%s/%s" %
+                       (USERNAME, PASSWORD, STAGING_HOST, DB_NAME))
 metadata = MetaData()
+
 
 def my_cards_table(metadata, engine):
     '''This function creates and returns table for cards'''
     my_cards = Table('cards', metadata,
-        Column('card_id', Integer, primary_key=True),
-        Column('subType_id', Integer, ForeignKey('subType.subType_id')),
-        Column('cardType_id', Integer, ForeignKey('cardType.cardType_id')),
-        Column('family_id', Integer, ForeignKey('family.family_id'),nullable=True),
-        Column('name', String(100)),
-        Column('text', String(1000)),
-        Column('cardType', String(100)),
-        Column('subType', String(100)),
-        Column('family', String(100), nullable=True),
-        Column('attack', Integer, nullable=True),
-        Column('defense', Integer, nullable=True),
-        Column('level', Integer, nullable=True),
-        Column('price', Float, nullable=True),
-        Column('url', String(100), nullable=True),)
+                     Column('card_id', Integer, primary_key=True),
+                     Column('subType_id', Integer,
+                            ForeignKey('subType.subType_id')),
+                     Column('cardType_id', Integer,
+                            ForeignKey('cardType.cardType_id')),
+                     Column('family_id', Integer, ForeignKey(
+                         'family.family_id'), nullable=True),
+                     Column('name', String(100)),
+                     Column('text', String(1000)),
+                     Column('cardType', String(100)),
+                     Column('subType', String(100)),
+                     Column('family', String(100), nullable=True),
+                     Column('attack', Integer, nullable=True),
+                     Column('defense', Integer, nullable=True),
+                     Column('level', Integer, nullable=True),
+                     Column('price', Float, nullable=True),
+                     Column('url', String(100), nullable=True),)
 
     my_cards.create(engine, checkfirst=True)
     return my_cards
 
+
 def my_subtype_table(metadata, engine):
     '''This function creates and returns table for card subType'''
     my_subtype = Table("subType", metadata,
-        Column('subType_id', Integer, primary_key=True),
-        Column('cardType_id', Integer, ForeignKey('cardType.cardType_id')),
-        Column('subType_name', String(100)),
-        Column('cards_in_subType', Integer),
-        Column('avg_price_subtype', Float, nullable=True),
-        Column('cardType', String(100)),)
+                       Column('subType_id', Integer, primary_key=True),
+                       Column('cardType_id', Integer,
+                              ForeignKey('cardType.cardType_id')),
+                       Column('subType_name', String(100)),
+                       Column('cards_in_subType', Integer),
+                       Column('avg_price_subtype', Float, nullable=True),
+                       Column('cardType', String(100)),)
 
     my_subtype.create(engine, checkfirst=True)
     return my_subtype
 
+
 def my_family_table(metadata, engine):
     '''This function creates and returns table for card family'''
     my_family = Table("family", metadata,
-        Column('family_id', Integer, primary_key=True),
-        Column('family_name', String(100)),
-        Column('cards_in_family', Integer),
-        Column('types_in_family', Integer),
-        Column('avg_attack', Float),
-        Column('avg_defence', Float),)
+                      Column('family_id', Integer, primary_key=True),
+                      Column('family_name', String(100)),
+                      Column('cards_in_family', Integer),
+                      Column('types_in_family', Integer),
+                      Column('avg_attack', Float),
+                      Column('avg_defence', Float),)
 
     my_family.create(engine, checkfirst=True)
     return my_family
 
+
 def my_cardType_table(metadata, engine):
     '''This function creates and returns table for cardType'''
     my_cardType = Table("cardType", metadata,
-        Column('cardType_id', Integer, primary_key=True),
-        Column('cardType_name', String(100)),
-        Column('cards_in_cardType', Integer),
-        Column('url', String(100), nullable=True),
-        Column('number_of_subtypes', Integer),)
+                        Column('cardType_id', Integer, primary_key=True),
+                        Column('cardType_name', String(100)),
+                        Column('cards_in_cardType', Integer),
+                        Column('url', String(100), nullable=True),
+                        Column('number_of_subtypes', Integer),)
 
     my_cardType.create(engine, checkfirst=True)
     return my_cardType
 
-my_family=my_family_table(metadata, engine)
-my_type=my_cardType_table(metadata, engine)
-my_subtype=my_subtype_table(metadata, engine)
-my_cards=my_cards_table(metadata, engine)
+my_family = my_family_table(metadata, engine)
+my_type = my_cardType_table(metadata, engine)
+my_subtype = my_subtype_table(metadata, engine)
+my_cards = my_cards_table(metadata, engine)
 '''
 conn = engine.connect()
 
