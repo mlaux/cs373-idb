@@ -6,7 +6,8 @@ FILES :=                              \
 			app/tests.py                    \
 			app/models.py                   \
 		IDB1.log													\
-    IDB2.log
+    IDB2.log													\
+    IDB3.log
 
 ifeq ($(CI), true)
     COVERAGE := coverage
@@ -28,6 +29,9 @@ IDB1.log:
 
 IDB2.log:
 	git log > IDB2.log
+
+IDB3.log:
+	git log > IDB3.log
 
 clean:
 	rm -f  .pylintrc
