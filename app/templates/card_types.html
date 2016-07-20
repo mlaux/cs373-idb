@@ -27,14 +27,11 @@ function populate_cards() {
                 var num_of_st = document.createElement("td");
                 var cardlink= document.createElement("a");
                 var typelink= document.createElement("a");
-                var subtypelink= document.createElement("a");
 
                 cardlink.href="typeTemplate/"+result[i][1];
                 cardname.appendChild(cardlink);
                 typelink.href="typeTemplate/"+result[i][1];
                 card_in_t.appendChild(typelink);
-                subtypelink.href="subTypeTemplate/"+result[i][3];
-                num_of_st.appendChild(subtypelink);
 
                 row.appendChild(cardname);
                 row.appendChild(card_in_t);
@@ -44,8 +41,7 @@ function populate_cards() {
                 cardlink.innerHTML = (result[i][1]).toUpperCase();
                 //card_in_t.innerHTML = result[i][2];
                 typelink.innerHTML = result[i][2];
-                //num_of_st.innerHTML = result[i][4];
-                subtypelink.innerHTML = result[i][3];
+                num_of_st.innerHTML = result[i][4];
             }
             i+=1;
         }
