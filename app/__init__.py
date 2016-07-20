@@ -70,7 +70,7 @@ for row in subtype:
     sublist.append(row)
     
 for i in range(0, len(num_cards)):
-    sublist[i][4] = num_cards[i]
+    sublist[i][3] = num_cards[i]
 
 @app.route("/")
 def home_page():
